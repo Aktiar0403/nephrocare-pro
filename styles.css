@@ -70,3 +70,14 @@ footer {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.accordion-content form label {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordion-content form input[type="number"] {
+  width: 100%;
+  max-width: 200px;
+}

@@ -45,9 +45,52 @@
 </div>
 
         <button class="accordion-button">Medical History</button>
-        <div class="accordion-content">
-          <p>Inputs for medical history go here.</p>
-        </div>
+<div class="accordion-content">
+  <form id="medical-history-form">
+    <label>
+      <input type="checkbox" id="diabetes" name="diabetes">
+      Diabetes
+    </label>
+    <input type="number" id="diabetes-duration" name="diabetes-duration" placeholder="Duration (years)">
+
+    <label>
+      <input type="checkbox" id="hypertension" name="hypertension">
+      Hypertension
+    </label>
+    <input type="number" id="hypertension-duration" name="hypertension-duration" placeholder="Duration (years)">
+
+    <label>
+      <input type="checkbox" id="nsaid-use" name="nsaid-use">
+      NSAID Use
+    </label>
+
+    <label>
+      <input type="checkbox" id="past-stone-disease" name="past-stone-disease">
+      Past Stone Disease
+    </label>
+
+    <label>
+      <input type="checkbox" id="family-ckd" name="family-ckd">
+      Family History of CKD
+    </label>
+
+    <label>
+      <input type="checkbox" id="tb" name="tb">
+      TB
+    </label>
+
+    <label>
+      <input type="checkbox" id="hiv" name="hiv">
+      HIV
+    </label>
+
+    <label>
+      <input type="checkbox" id="hepatitis" name="hepatitis">
+      Hepatitis
+    </label>
+  </form>
+</div>
+
 
         <button class="accordion-button">Symptoms</button>
         <div class="accordion-content">
