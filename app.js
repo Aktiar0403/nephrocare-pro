@@ -170,16 +170,48 @@ function loadSavedVisits() {
   details.innerHTML = '<p>Select a visit above to view details here.</p>';
 
   visits.forEach((visit, index) => {
-    const li = document.createElement('li');
-    li.textContent = `Visit ${index + 1} - ${visit.date}`;
-    li.style.cursor = 'pointer';
-
-    li.addEventListener('click', () => {
-      displayVisitDetails(visit);
-    });
-
-    list.appendChild(li);
+  const li = document.createElement('li');
+  
+  const visitText = document.createElement('span');
+  visitText.textContent = `Visit ${index + 1} - ${visit.date}`;
+  visitText.style.cursor = 'pointer';
+  visitText.style.flex = '1';
+  visitText.addEventListener('click', () => {
+    displayVisitDetails(visit);
   });
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = '🗑️ Delete';
+  deleteButton.style.marginLeft = '1rem';
+  deleteButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    deleteVisit(index);
+  });
+
+  li.style.display = 'flex';
+  li.style.alignItems = 'center';
+  li.appendChild(visitText);
+  li.appendChild(deleteButton);
+
+  list.appendChild(li);
+});
+function deleteVisit(index) {
+  if (!confirm('Are you sure you want to delete this visit?')) return;
+
+  let visits = JSON.parse(localStorage.getItem('nephroVisits') || '[]');
+  visits.splice(index, 1);
+  localStorage.setItem('nephroVisits', JSON.stringify(visits));
+
+  loadSavedVisits();
+
+  const details = document.getElementById('visit-details');
+  if (details) {
+    details.innerHTML = '<p>Select a visit above to view details here.</p>';
+  }
+
+  alert('Visit deleted successfully!');
+}
+
 }
 function displayVisitDetails(visit) {
   const details = document.getElementById('visit-details');
