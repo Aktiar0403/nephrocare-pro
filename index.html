@@ -327,10 +327,23 @@
 </div>
 
 
-        <button class="accordion-button">Prescription</button>
-        <div class="accordion-content">
-          <p>Prescribed medicines go here.</p>
-        </div>
+       <button class="accordion-button">Prescription</button>
+<div class="accordion-content">
+  <form id="prescription-form">
+    <label for="med-name">Medicine Name:</label>
+    <input type="text" id="med-name" name="med-name" placeholder="e.g. Ramipril">
+
+    <label for="dose">Dose:</label>
+    <input type="text" id="dose" name="dose" placeholder="e.g. 5mg daily">
+
+    <label for="notes">Doctor Notes:</label>
+    <textarea id="notes" name="notes" placeholder="Instructions for doctor"></textarea>
+
+    <label for="patient-instructions">Patient Instructions:</label>
+    <textarea id="patient-instructions" name="patient-instructions" placeholder="Simple words for patient"></textarea>
+  </form>
+</div>
+
 
         <button class="accordion-button">Saved Records</button>
         <div class="accordion-content">

@@ -156,3 +156,22 @@ footer {
   border-radius: 5px;
   resize: vertical;
 }
+#prescription-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+#prescription-form input,
+#prescription-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-width: 500px;
+}
+
+#prescription-form textarea {
+  height: 100px;
+  resize: vertical;
+}
