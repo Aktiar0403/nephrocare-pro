@@ -23,3 +23,5 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
   document.getElementById('patient-diagnosis').value = 
     "Your kidneys are not working as well as they should (Stage 3). We suggest controlling blood pressure carefully and seeing a kidney specialist.";
 });
+// Placeholder for future saved records logic
+console.log("Saved Records section ready.");

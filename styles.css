@@ -175,3 +175,18 @@ footer {
   height: 100px;
   resize: vertical;
 }
+#saved-records-section {
+  padding: 1rem 0;
+}
+
+#saved-records-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#saved-records-list li {
+  background-color: #e0f2f1;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
