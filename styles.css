@@ -247,3 +247,14 @@ footer {
 #save-visit:hover {
   background-color: #004d40;
 }
+#visit-details {
+  background-color: #f1f8e9;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#visit-details h4 {
+  margin-top: 1rem;
+  color: #33691e;
+}

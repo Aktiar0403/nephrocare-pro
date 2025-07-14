@@ -156,21 +156,69 @@ document.getElementById('save-visit').addEventListener('click', () => {
 // Load saved records on page load
 function loadSavedVisits() {
   const list = document.getElementById('saved-records-list');
-  if (!list) return;
+  const details = document.getElementById('visit-details');
+  if (!list || !details) return;
 
   const visits = JSON.parse(localStorage.getItem('nephroVisits') || '[]');
   if (visits.length === 0) {
     list.innerHTML = '<li>No saved records yet.</li>';
+    details.innerHTML = '';
     return;
   }
 
   list.innerHTML = '';
+  details.innerHTML = '<p>Select a visit above to view details here.</p>';
+
   visits.forEach((visit, index) => {
     const li = document.createElement('li');
     li.textContent = `Visit ${index + 1} - ${visit.date}`;
+    li.style.cursor = 'pointer';
+
+    li.addEventListener('click', () => {
+      displayVisitDetails(visit);
+    });
+
     list.appendChild(li);
   });
 }
+
+function displayVisitDetails(visit) {
+  const details = document.getElementById('visit-details');
+  if (!details) return;
+
+  details.innerHTML = `
+    <h3>Visit on ${visit.date}</h3>
+
+    <h4>Patient Profile</h4>
+    <pre>${JSON.stringify(visit.patientProfile, null, 2)}</pre>
+
+    <h4>Medical History</h4>
+    <pre>${JSON.stringify(visit.medicalHistory, null, 2)}</pre>
+
+    <h4>Symptoms</h4>
+    <pre>${JSON.stringify(visit.symptoms, null, 2)}</pre>
+
+    <h4>Vital Signs</h4>
+    <pre>${JSON.stringify(visit.vitalSigns, null, 2)}</pre>
+
+    <h4>Blood Tests</h4>
+    <pre>${JSON.stringify(visit.bloodTests, null, 2)}</pre>
+
+    <h4>Urine Tests</h4>
+    <pre>${JSON.stringify(visit.urineTests, null, 2)}</pre>
+
+    <h4>Ultrasound Report</h4>
+    <pre>${JSON.stringify(visit.ultrasoundReport, null, 2)}</pre>
+
+    <h4>Diagnosis</h4>
+    <pre>${JSON.stringify(visit.diagnosis, null, 2)}</pre>
+
+    <h4>Prescription</h4>
+    <pre>${JSON.stringify(visit.prescription, null, 2)}</pre>
+  `;
+}
+
+
 
 // Call on page load
 window.addEventListener('load', loadSavedVisits);
