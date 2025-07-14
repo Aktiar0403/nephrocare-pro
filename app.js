@@ -515,4 +515,67 @@ window.addEventListener('load', () => {
   checkVitalSignsRanges();
 });
 
+// Show Export button
+const exportButton = document.getElementById('export-button');
+const exportText = document.getElementById('export-text');
+if (exportButton && exportText) {
+  exportButton.style.display = 'block';
+  exportText.style.display = 'none';  // Hide text initially
 
+  exportButton.onclick = () => {
+    const exportData = `
+Visit Date: ${visit.date}
+
+👤 Patient Profile
+${formatObject(visit.patientProfile)}
+
+🩺 Medical History
+${formatObject(visit.medicalHistory)}
+
+🩹 Symptoms
+${formatObject(visit.symptoms)}
+
+🩸 Vital Signs
+${formatObject(visit.vitalSigns)}
+
+🧪 Blood Tests
+${formatObject(visit.bloodTests)}
+
+💧 Urine Tests
+${formatObject(visit.urineTests)}
+
+🖼️ Ultrasound Report
+${formatObject(visit.ultrasoundReport)}
+
+🧭 AI Diagnosis
+Doctor Interpretation:
+${visit.diagnosis.doctor}
+
+Patient-Friendly Explanation:
+${visit.diagnosis.patient}
+
+💊 Prescription
+${formatObject(visit.prescription)}
+    `.trim();
+
+    exportText.value = exportData;
+    exportText.style.display = 'block';
+    exportButton.textContent = '✅ Copy to Clipboard';
+
+    exportButton.onclick = () => {
+      navigator.clipboard.writeText(exportData).then(() => {
+        alert('Visit summary copied to clipboard!');
+      });
+    };
+  };
+}
+
+function formatObject(obj) {
+  return Object.entries(obj)
+    .map(([key, value]) => {
+      if (Array.isArray(value)) return `${key}: ${value.join(', ')}`;
+      if (typeof value === 'object') return `${key}: ${JSON.stringify(value)}`;
+      return `${key}: ${value}`;
+    })
+    .join('\n');
+}
