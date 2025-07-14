@@ -26,6 +26,62 @@ const urineTestRanges = {
   'acr': { max: 30 },                        // mg/g
   'urine-protein-24h': { max: 0.15 }         // g/day
 };
+let allThresholds = {
+  bloodTests: { ...bloodTestRanges },
+  urineTests: { ...urineTestRanges },
+  vitalSigns: { ...vitalSignsRanges }
+};
+function loadCustomThresholds() {
+  const saved = localStorage.getItem('nephroThresholds');
+  if (saved) {
+    allThresholds = JSON.parse(saved);
+  }
+}
+
+function saveCustomThresholds() {
+  localStorage.setItem('nephroThresholds', JSON.stringify(allThresholds));
+}
+function populateThresholdSettings() {
+  const container = document.getElementById('threshold-settings');
+  if (!container) return;
+
+  let html = '';
+
+  for (const category in allThresholds) {
+    html += `<h5>${category.replace(/([A-Z])/g, ' $1')}</h5>`;
+    for (const test in allThresholds[category]) {
+      const { min, max } = allThresholds[category][test];
+      html += `
+        <div>
+          <label>${test} Min:</label>
+          <input type="number" id="${test}-min" value="${min ?? ''}">
+          <label>Max:</label>
+          <input type="number" id="${test}-max" value="${max ?? ''}">
+        </div>
+      `;
+    }
+  }
+
+  container.innerHTML = html;
+}
+document.getElementById('save-thresholds').addEventListener('click', () => {
+  for (const category in allThresholds) {
+    for (const test in allThresholds[category]) {
+      const minInput = document.getElementById(`${test}-min`);
+      const maxInput = document.getElementById(`${test}-max`);
+      allThresholds[category][test].min = minInput ? parseFloat(minInput.value) : undefined;
+      allThresholds[category][test].max = maxInput ? parseFloat(maxInput.value) : undefined;
+    }
+  }
+
+  saveCustomThresholds();
+  alert('Thresholds saved! They will now apply to color-coding.');
+
+  // Re-run checks to apply new thresholds immediately
+  checkBloodTestRanges();
+  checkUrineTestRanges();
+  checkVitalSignsRanges();
+});
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -323,7 +379,7 @@ function displayVisitDetails(visit) {
   `;
 }
 function checkBloodTestRanges() {
-  Object.keys(bloodTestRanges).forEach(test => {
+  Object.keys(allThresholds.bloodTests).forEach(test => {
     const input = document.getElementById(test);
     if (!input) return;
 
@@ -334,15 +390,16 @@ function checkBloodTestRanges() {
         return;
       }
 
-      const { min, max } = bloodTestRanges[test];
-      if (val < min || val > max) {
-        input.style.backgroundColor = '#ffcccc';  // light red
+      const { min, max } = allThresholds.bloodTests[test];
+      if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+        input.style.backgroundColor = '#ffcccc';
       } else {
-        input.style.backgroundColor = '#ccffcc';  // light green
+        input.style.backgroundColor = '#ccffcc';
       }
     });
   });
 }
+
 
 // Call on page load
 window.addEventListener('load', () => {
@@ -350,7 +407,7 @@ window.addEventListener('load', () => {
   checkBloodTestRanges();
 });
 function checkUrineTestRanges() {
-  Object.keys(urineTestRanges).forEach(test => {
+  Object.keys(allThresholds.urineTests).forEach(test => {
     const input = document.getElementById(test);
     if (!input) return;
 
@@ -361,17 +418,18 @@ function checkUrineTestRanges() {
         return;
       }
 
-      const { max } = urineTestRanges[test];
-      if (val > max) {
-        input.style.backgroundColor = '#ffcccc';  // red
+      const { min, max } = allThresholds.urineTests[test];
+      if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+        input.style.backgroundColor = '#ffcccc';
       } else {
-        input.style.backgroundColor = '#ccffcc';  // green
+        input.style.backgroundColor = '#ccffcc';
       }
     });
   });
 }
+
 function checkVitalSignsRanges() {
-  Object.keys(vitalSignsRanges).forEach(test => {
+  Object.keys(allThresholds.vitalSigns).forEach(test => {
     const input = document.getElementById(test);
     if (!input) return;
 
@@ -382,15 +440,16 @@ function checkVitalSignsRanges() {
         return;
       }
 
-      const { min, max } = vitalSignsRanges[test];
-      if (val < min || val > max) {
-        input.style.backgroundColor = '#ffcccc';  // red
+      const { min, max } = allThresholds.vitalSigns[test];
+      if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+        input.style.backgroundColor = '#ffcccc';
       } else {
-        input.style.backgroundColor = '#ccffcc';  // green
+        input.style.backgroundColor = '#ccffcc';
       }
     });
   });
 }
+
 
 
 
