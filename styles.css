@@ -81,3 +81,8 @@ footer {
   width: 100%;
   max-width: 200px;
 }
+.accordion-content form input[type="number"],
+.accordion-content form select {
+  width: 100%;
+  max-width: 300px;
+}
