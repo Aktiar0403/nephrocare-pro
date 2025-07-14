@@ -15,6 +15,11 @@ const bloodTestRanges = {
   albumin: { min: 3.5, max: 5.5 },
   pth: { min: 10, max: 65 }
 };
+const urineTestRanges = {
+  'spot-protein-creatinine': { max: 150 },   // mg/g
+  'acr': { max: 30 },                        // mg/g
+  'urine-protein-24h': { max: 0.15 }         // g/day
+};
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -338,8 +343,34 @@ window.addEventListener('load', () => {
   loadSavedVisits();
   checkBloodTestRanges();
 });
+function checkUrineTestRanges() {
+  Object.keys(urineTestRanges).forEach(test => {
+    const input = document.getElementById(test);
+    if (!input) return;
+
+    input.addEventListener('input', () => {
+      const val = parseFloat(input.value);
+      if (isNaN(val)) {
+        input.style.backgroundColor = '';
+        return;
+      }
+
+      const { max } = urineTestRanges[test];
+      if (val > max) {
+        input.style.backgroundColor = '#ffcccc';  // red
+      } else {
+        input.style.backgroundColor = '#ccffcc';  // green
+      }
+    });
+  });
+}
 
 
 
 // Call on page load
-window.addEventListener('load', loadSavedVisits);
+window.addEventListener('load', () => {
+  loadSavedVisits();
+  checkBloodTestRanges();
+  checkUrineTestRanges();
+});
+
