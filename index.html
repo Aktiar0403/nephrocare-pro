@@ -313,10 +313,19 @@
   </form>
 </div>
 
-        <button class="accordion-button">AI Diagnosis</button>
-        <div class="accordion-content">
-          <p>Generated AI diagnosis will appear here.</p>
-        </div>
+       <button class="accordion-button">AI Diagnosis</button>
+<div class="accordion-content">
+  <div id="ai-diagnosis-section">
+    <button id="generate-diagnosis">Generate Diagnosis</button>
+    
+    <h3>Doctor-Level Interpretation</h3>
+    <textarea id="doctor-diagnosis" readonly placeholder="Diagnosis will appear here"></textarea>
+    
+    <h3>Patient-Friendly Explanation</h3>
+    <textarea id="patient-diagnosis" readonly placeholder="Patient explanation will appear here"></textarea>
+  </div>
+</div>
+
 
         <button class="accordion-button">Prescription</button>
         <div class="accordion-content">
