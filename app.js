@@ -181,7 +181,6 @@ function loadSavedVisits() {
     list.appendChild(li);
   });
 }
-
 function displayVisitDetails(visit) {
   const details = document.getElementById('visit-details');
   if (!details) return;
@@ -189,32 +188,82 @@ function displayVisitDetails(visit) {
   details.innerHTML = `
     <h3>Visit on ${visit.date}</h3>
 
-    <h4>Patient Profile</h4>
-    <pre>${JSON.stringify(visit.patientProfile, null, 2)}</pre>
+    <section>
+      <h4>👤 Patient Profile</h4>
+      <ul>
+        <li><strong>Name:</strong> ${visit.patientProfile.name}</li>
+        <li><strong>Age:</strong> ${visit.patientProfile.age}</li>
+        <li><strong>Gender:</strong> ${visit.patientProfile.gender}</li>
+        <li><strong>Location:</strong> ${visit.patientProfile.location}</li>
+      </ul>
+    </section>
 
-    <h4>Medical History</h4>
-    <pre>${JSON.stringify(visit.medicalHistory, null, 2)}</pre>
+    <section>
+      <h4>🩺 Medical History</h4>
+      <ul>
+        ${Object.entries(visit.medicalHistory).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
+      </ul>
+    </section>
 
-    <h4>Symptoms</h4>
-    <pre>${JSON.stringify(visit.symptoms, null, 2)}</pre>
+    <section>
+      <h4>🩹 Symptoms</h4>
+      <ul>
+        ${Object.entries(visit.symptoms).filter(([k,v]) => v).map(([key]) => `<li>${key}</li>`).join('') || '<li>None reported</li>'}
+      </ul>
+    </section>
 
-    <h4>Vital Signs</h4>
-    <pre>${JSON.stringify(visit.vitalSigns, null, 2)}</pre>
+    <section>
+      <h4>🩸 Vital Signs</h4>
+      <ul>
+        <li>SBP: ${visit.vitalSigns.sbp} mmHg</li>
+        <li>DBP: ${visit.vitalSigns.dbp} mmHg</li>
+        <li>Weight: ${visit.vitalSigns.weight} kg</li>
+        <li>Volume Status: ${visit.vitalSigns.volumeStatus}</li>
+      </ul>
+    </section>
 
-    <h4>Blood Tests</h4>
-    <pre>${JSON.stringify(visit.bloodTests, null, 2)}</pre>
+    <section>
+      <h4>🧪 Blood Tests</h4>
+      <ul>
+        ${Object.entries(visit.bloodTests).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
+      </ul>
+    </section>
 
-    <h4>Urine Tests</h4>
-    <pre>${JSON.stringify(visit.urineTests, null, 2)}</pre>
+    <section>
+      <h4>💧 Urine Tests</h4>
+      <ul>
+        ${Object.entries(visit.urineTests).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
+      </ul>
+    </section>
 
-    <h4>Ultrasound Report</h4>
-    <pre>${JSON.stringify(visit.ultrasoundReport, null, 2)}</pre>
+    <section>
+      <h4>🖼️ Ultrasound Report</h4>
+      <ul>
+        <li>Kidney Size: ${visit.ultrasoundReport.kidneySize}</li>
+        <li>Echogenicity: ${visit.ultrasoundReport.echogenicity}</li>
+        <li>Parenchymal Thickness: ${visit.ultrasoundReport.parenchymalThickness}</li>
+        <li>Hydronephrosis: ${visit.ultrasoundReport.hydronephrosis}</li>
+        <li>Stones: ${visit.ultrasoundReport.stones}</li>
+        <li>Cysts: ${visit.ultrasoundReport.cysts}</li>
+        <li>Other Findings: ${visit.ultrasoundReport.otherFindings.join(', ') || 'None'}</li>
+      </ul>
+    </section>
 
-    <h4>Diagnosis</h4>
-    <pre>${JSON.stringify(visit.diagnosis, null, 2)}</pre>
+    <section>
+      <h4>🧭 AI Diagnosis</h4>
+      <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor}</p>
+      <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient}</p>
+    </section>
 
-    <h4>Prescription</h4>
-    <pre>${JSON.stringify(visit.prescription, null, 2)}</pre>
+    <section>
+      <h4>💊 Prescription</h4>
+      <ul>
+        <li><strong>Medicine:</strong> ${visit.prescription.medicineName}</li>
+        <li><strong>Dose:</strong> ${visit.prescription.dose}</li>
+        <li><strong>Doctor Notes:</strong> ${visit.prescription.notes}</li>
+        <li><strong>Patient Instructions:</strong> ${visit.prescription.patientInstructions}</li>
+      </ul>
+    </section>
   `;
 }
 

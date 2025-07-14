@@ -258,3 +258,23 @@ footer {
   margin-top: 1rem;
   color: #33691e;
 }
+#visit-details section {
+  margin-top: 1rem;
+  background-color: #e8f5e9;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#visit-details ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+#visit-details h4 {
+  margin-top: 0;
+  color: #33691e;
+}
+
+#visit-details p {
+  margin: 0.5rem 0;
+}
