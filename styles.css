@@ -290,3 +290,10 @@ footer {
 #saved-records-list button:hover {
   background-color: #b71c1c;
 }
+input[type="number"].normal-range {
+  background-color: #ccffcc;
+}
+
+input[type="number"].abnormal-range {
+  background-color: #ffcccc;
+}

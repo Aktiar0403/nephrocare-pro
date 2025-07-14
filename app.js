@@ -2,6 +2,19 @@ console.log("NephroCare Pro App Loaded.");
 console.log("NephroCare Pro App Loaded.");
 
 const buttons = document.querySelectorAll('.accordion-button');
+const bloodTestRanges = {
+  creatinine: { min: 0.7, max: 1.2 },
+  egfr: { min: 90, max: 150 },
+  urea: { min: 7, max: 20 },
+  potassium: { min: 3.5, max: 5.0 },
+  sodium: { min: 135, max: 145 },
+  calcium: { min: 8.5, max: 10.5 },
+  phosphate: { min: 2.5, max: 4.5 },
+  bicarbonate: { min: 22, max: 28 },
+  hemoglobin: { min: 12, max: 16 },
+  albumin: { min: 3.5, max: 5.5 },
+  pth: { min: 10, max: 65 }
+};
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -298,6 +311,33 @@ function displayVisitDetails(visit) {
     </section>
   `;
 }
+function checkBloodTestRanges() {
+  Object.keys(bloodTestRanges).forEach(test => {
+    const input = document.getElementById(test);
+    if (!input) return;
+
+    input.addEventListener('input', () => {
+      const val = parseFloat(input.value);
+      if (isNaN(val)) {
+        input.style.backgroundColor = '';
+        return;
+      }
+
+      const { min, max } = bloodTestRanges[test];
+      if (val < min || val > max) {
+        input.style.backgroundColor = '#ffcccc';  // light red
+      } else {
+        input.style.backgroundColor = '#ccffcc';  // light green
+      }
+    });
+  });
+}
+
+// Call on page load
+window.addEventListener('load', () => {
+  loadSavedVisits();
+  checkBloodTestRanges();
+});
 
 
 
