@@ -159,10 +159,66 @@
 </div>
 
 
-        <button class="accordion-button">Blood Tests</button>
-        <div class="accordion-content">
-          <p>Inputs for blood tests go here.</p>
-        </div>
+       <button class="accordion-button">Blood Tests</button>
+<div class="accordion-content">
+  <form id="blood-tests-form">
+    <div class="lab-input">
+      <label for="creatinine">Creatinine (mg/dL) [0.7–1.2]:</label>
+      <input type="number" step="0.01" id="creatinine" name="creatinine">
+    </div>
+
+    <div class="lab-input">
+      <label for="egfr">eGFR (mL/min) [>90]:</label>
+      <input type="number" id="egfr" name="egfr">
+    </div>
+
+    <div class="lab-input">
+      <label for="urea">Urea (mg/dL) [7–20]:</label>
+      <input type="number" id="urea" name="urea">
+    </div>
+
+    <div class="lab-input">
+      <label for="potassium">Potassium (mEq/L) [3.5–5.0]:</label>
+      <input type="number" step="0.01" id="potassium" name="potassium">
+    </div>
+
+    <div class="lab-input">
+      <label for="sodium">Sodium (mEq/L) [135–145]:</label>
+      <input type="number" id="sodium" name="sodium">
+    </div>
+
+    <div class="lab-input">
+      <label for="calcium">Calcium (mg/dL) [8.5–10.5]:</label>
+      <input type="number" step="0.01" id="calcium" name="calcium">
+    </div>
+
+    <div class="lab-input">
+      <label for="phosphate">Phosphate (mg/dL) [2.5–4.5]:</label>
+      <input type="number" step="0.01" id="phosphate" name="phosphate">
+    </div>
+
+    <div class="lab-input">
+      <label for="bicarbonate">Bicarbonate (mEq/L) [22–28]:</label>
+      <input type="number" step="0.1" id="bicarbonate" name="bicarbonate">
+    </div>
+
+    <div class="lab-input">
+      <label for="hemoglobin">Hemoglobin (g/dL) [12–16]:</label>
+      <input type="number" step="0.1" id="hemoglobin" name="hemoglobin">
+    </div>
+
+    <div class="lab-input">
+      <label for="albumin">Albumin (g/dL) [3.5–5.5]:</label>
+      <input type="number" step="0.1" id="albumin" name="albumin">
+    </div>
+
+    <div class="lab-input">
+      <label for="pth">PTH (pg/mL) [10–65]:</label>
+      <input type="number" id="pth" name="pth">
+    </div>
+  </form>
+</div>
+
 
         <button class="accordion-button">Urine Tests</button>
         <div class="accordion-content">
