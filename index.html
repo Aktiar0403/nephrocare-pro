@@ -250,10 +250,68 @@
   </form>
 </div>
 
-        <button class="accordion-button">Ultrasound Report</button>
-        <div class="accordion-content">
-          <p>Inputs for ultrasound report go here.</p>
-        </div>
+       <button class="accordion-button">Ultrasound Report</button>
+<div class="accordion-content">
+  <form id="ultrasound-report-form">
+    <label for="kidney-size">Kidney Size:</label>
+    <select id="kidney-size" name="kidney-size">
+      <option value="">Select</option>
+      <option value="Normal">Normal</option>
+      <option value="Increased">Increased</option>
+      <option value="Decreased">Decreased</option>
+      <option value="Asymmetrical">Asymmetrical</option>
+    </select>
+
+    <label for="echogenicity">Cortical Echogenicity:</label>
+    <select id="echogenicity" name="echogenicity">
+      <option value="">Select</option>
+      <option value="Normal">Normal</option>
+      <option value="Mildly increased">Mildly increased</option>
+      <option value="Markedly increased">Markedly increased</option>
+    </select>
+
+    <label for="parenchymal-thickness">Parenchymal Thickness:</label>
+    <select id="parenchymal-thickness" name="parenchymal-thickness">
+      <option value="">Select</option>
+      <option value="Normal">Normal</option>
+      <option value="Reduced">Reduced</option>
+    </select>
+
+    <label for="hydronephrosis">Hydronephrosis:</label>
+    <select id="hydronephrosis" name="hydronephrosis">
+      <option value="">Select</option>
+      <option value="None">None</option>
+      <option value="Mild">Mild</option>
+      <option value="Moderate">Moderate</option>
+      <option value="Severe">Severe</option>
+    </select>
+
+    <label for="stones">Stones:</label>
+    <select id="stones" name="stones">
+      <option value="">Select</option>
+      <option value="None">None</option>
+      <option value="Single">Single</option>
+      <option value="Multiple">Multiple</option>
+      <option value="Bilateral">Bilateral</option>
+    </select>
+
+    <label for="cysts">Cysts:</label>
+    <select id="cysts" name="cysts">
+      <option value="">Select</option>
+      <option value="None">None</option>
+      <option value="Single">Single</option>
+      <option value="Multiple unilateral">Multiple unilateral</option>
+      <option value="Multiple bilateral">Multiple bilateral</option>
+    </select>
+
+    <fieldset>
+      <legend>Other Findings:</legend>
+      <label><input type="checkbox" name="other-findings" value="Cortical scarring"> Cortical scarring</label>
+      <label><input type="checkbox" name="other-findings" value="Poor corticomedullary differentiation"> Poor corticomedullary differentiation</label>
+      <label><input type="checkbox" name="other-findings" value="Perinephric collection"> Perinephric collection</label>
+    </fieldset>
+  </form>
+</div>
 
         <button class="accordion-button">AI Diagnosis</button>
         <div class="accordion-content">

@@ -103,3 +103,26 @@ footer {
   border-radius: 4px;
   max-width: 300px;
 }
+.accordion-content form select,
+.accordion-content form fieldset {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  max-width: 300px;
+}
+
+.accordion-content form fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.accordion-content form legend {
+  font-weight: bold;
+}
+
+.accordion-content form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
