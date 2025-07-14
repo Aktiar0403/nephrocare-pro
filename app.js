@@ -15,6 +15,12 @@ const bloodTestRanges = {
   albumin: { min: 3.5, max: 5.5 },
   pth: { min: 10, max: 65 }
 };
+const vitalSignsRanges = {
+  sbp: { min: 90, max: 140 },  // Normal SBP
+  dbp: { min: 60, max: 90 },   // Normal DBP
+  weight: { min: 30, max: 200 }  // Approx safe range (can be loose)
+};
+
 const urineTestRanges = {
   'spot-protein-creatinine': { max: 150 },   // mg/g
   'acr': { max: 30 },                        // mg/g
@@ -364,6 +370,27 @@ function checkUrineTestRanges() {
     });
   });
 }
+function checkVitalSignsRanges() {
+  Object.keys(vitalSignsRanges).forEach(test => {
+    const input = document.getElementById(test);
+    if (!input) return;
+
+    input.addEventListener('input', () => {
+      const val = parseFloat(input.value);
+      if (isNaN(val)) {
+        input.style.backgroundColor = '';
+        return;
+      }
+
+      const { min, max } = vitalSignsRanges[test];
+      if (val < min || val > max) {
+        input.style.backgroundColor = '#ffcccc';  // red
+      } else {
+        input.style.backgroundColor = '#ccffcc';  // green
+      }
+    });
+  });
+}
 
 
 
@@ -372,5 +399,7 @@ window.addEventListener('load', () => {
   loadSavedVisits();
   checkBloodTestRanges();
   checkUrineTestRanges();
+  checkVitalSignsRanges();
 });
+
 
