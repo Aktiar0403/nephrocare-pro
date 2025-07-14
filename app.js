@@ -25,3 +25,18 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
 });
 // Placeholder for future saved records logic
 console.log("Saved Records section ready.");
+// Placeholder for rule saving
+document.getElementById('save-rule').addEventListener('click', () => {
+  const testName = document.getElementById('test-name').value;
+  const operator = document.getElementById('operator').value;
+  const threshold = document.getElementById('threshold').value;
+  const suggestion = document.getElementById('suggestion').value;
+  const reason = document.getElementById('reason').value;
+
+  if (!testName || !operator || !threshold || !suggestion || !reason) {
+    alert('Please fill all fields and provide a reason.');
+    return;
+  }
+
+  alert(`Rule saved!\nTest: ${testName} ${operator} ${threshold}\nSuggestion: ${suggestion}\nReason: ${reason}`);
+});
