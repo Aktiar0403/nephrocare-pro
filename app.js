@@ -95,14 +95,68 @@ buttons.forEach(button => {
   });
 });
 document.getElementById('generate-diagnosis').addEventListener('click', () => {
-  // For now, we just show placeholder text.
-  // Later, we'll add real logic here!
-  document.getElementById('doctor-diagnosis').value = 
-    "Diagnosis: Chronic Kidney Disease Stage 3b with moderate proteinuria. Recommend BP control, ACEi/ARB, nephrology referral.";
-  
-  document.getElementById('patient-diagnosis').value = 
-    "Your kidneys are not working as well as they should (Stage 3). We suggest controlling blood pressure carefully and seeing a kidney specialist.";
+  let doctorNotes = [];
+  let patientNotes = [];
+
+  // Blood Tests
+  for (const test in allThresholds.bloodTests) {
+    const input = document.getElementById(test);
+    if (!input || input.value === '') continue;
+
+    const val = parseFloat(input.value);
+    if (isNaN(val)) continue;
+
+    const { min, max } = allThresholds.bloodTests[test];
+    if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+      doctorNotes.push(`${test}: Abnormal (${val})`);
+      patientNotes.push(`Your ${test.replace(/-/g, ' ')} is outside normal range (${val}).`);
+    }
+  }
+
+  // Urine Tests
+  for (const test in allThresholds.urineTests) {
+    const input = document.getElementById(test);
+    if (!input || input.value === '') continue;
+
+    const val = parseFloat(input.value);
+    if (isNaN(val)) continue;
+
+    const { min, max } = allThresholds.urineTests[test];
+    if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+      doctorNotes.push(`${test}: Abnormal (${val})`);
+      patientNotes.push(`Your ${test.replace(/-/g, ' ')} is higher than normal (${val}).`);
+    }
+  }
+
+  // Vital Signs
+  for (const test in allThresholds.vitalSigns) {
+    const input = document.getElementById(test);
+    if (!input || input.value === '') continue;
+
+    const val = parseFloat(input.value);
+    if (isNaN(val)) continue;
+
+    const { min, max } = allThresholds.vitalSigns[test];
+    if ((min !== undefined && val < min) || (max !== undefined && val > max)) {
+      doctorNotes.push(`${test}: Abnormal (${val})`);
+      patientNotes.push(`Your ${test.toUpperCase()} is outside normal range (${val}).`);
+    }
+  }
+
+  // Summaries
+  if (doctorNotes.length === 0) {
+    doctorNotes.push("All tests within normal thresholds.");
+  }
+
+  if (patientNotes.length === 0) {
+    patientNotes.push("All your test results appear to be within normal range.");
+  }
+
+  // Write to textareas
+  document.getElementById('doctor-diagnosis').value = doctorNotes.join('\n');
+  document.getElementById('patient-diagnosis').value = patientNotes.join('\n');
 });
+
 // Placeholder for future saved records logic
 console.log("Saved Records section ready.");
 // Placeholder for rule saving
