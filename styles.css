@@ -22,3 +22,33 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+.accordion-button {
+  background-color: #00796b;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.accordion-button:hover {
+  background-color: #004d40;
+}
+
+.accordion-content {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #e0f2f1;
+  border-radius: 5px;
+}
+
+.accordion-content p {
+  margin: 1rem 0;
+}
