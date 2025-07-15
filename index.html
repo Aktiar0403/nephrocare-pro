@@ -284,6 +284,17 @@
     <textarea id="patient-instructions" name="patient-instructions" placeholder="Simple words for patient"></textarea>
   </form>
 </div>
+<!-- Saved Records Accordion -->
+<button class="accordion-button">Saved Records</button>
+<div class="accordion-content">
+  <div id="saved-records-section">
+    <p>No saved records yet.</p>
+    <ul id="saved-records-list"></ul>
+    <div id="visit-details"></div>
+    <button id="export-button" style="display:none;">📋 Export This Visit as Text</button>
+    <textarea id="export-text" readonly style="display:none; width:100%; height:200px; margin-top:1rem;"></textarea>
+  </div>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
