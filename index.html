@@ -359,24 +359,52 @@ function renderFields(data) {
     .map(([key, value]) => `<li><strong>${key}:</strong> ${value ? value : 'Not provided'}</li>`)
     .join('');
 }
-
-  function renderVisitList() {
-    recordsList.innerHTML = '';
-    if (visits.length === 0) {
-      recordsList.innerHTML = '<p>No saved records yet.</p>';
-      return;
-    }
-    visits.forEach((visit, index) => {
-      const li = document.createElement('li');
-      li.textContent = `Visit ${index + 1}`;
-      li.style.cursor = 'pointer';
-      li.addEventListener('click', () => {
-        displayVisitDetails(visit);
-      });
-      recordsList.appendChild(li);
-    });
+function renderVisitList() {
+  recordsList.innerHTML = '';
+  if (visits.length === 0) {
+    recordsList.innerHTML = '<p>No saved records yet.</p>';
+    return;
   }
 
+  visits.forEach((visit, index) => {
+    const li = document.createElement('li');
+
+    // Visit label (clickable)
+    const label = document.createElement('span');
+    label.textContent = `Visit ${index + 1}`;
+    label.style.cursor = 'pointer';
+    label.style.marginRight = '1rem';
+    label.addEventListener('click', () => {
+      displayVisitDetails(visit);
+    });
+
+    // Delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = '🗑️ Delete';
+    deleteButton.style.marginLeft = '1rem';
+    deleteButton.style.backgroundColor = '#e53935';
+    deleteButton.style.color = 'white';
+    deleteButton.style.border = 'none';
+    deleteButton.style.padding = '0.25rem 0.5rem';
+    deleteButton.style.borderRadius = '4px';
+    deleteButton.style.cursor = 'pointer';
+
+    deleteButton.addEventListener('click', () => {
+      if (confirm('Are you sure you want to delete this visit?')) {
+        visits.splice(index, 1);
+        localStorage.setItem('visits', JSON.stringify(visits));
+        renderVisitList();
+        visitDetails.innerHTML = '';
+      }
+    });
+
+    li.appendChild(label);
+    li.appendChild(deleteButton);
+    recordsList.appendChild(li);
+  });
+}
+
+  
   function displayVisitDetails(visit) {
   visitDetails.innerHTML = `
     <h4>🧾 Patient Profile</h4>
