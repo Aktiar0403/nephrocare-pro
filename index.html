@@ -296,13 +296,10 @@
   </div>
 </div>
 
-  <script>
-   let visits = JSON.parse(localStorage.getItem('visits')) || [];
-renderVisitList();
-let serialCounter = parseInt(localStorage.getItem('visitSerialCounter')) || 1;
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-    document.addEventListener('DOMContentLoaded', () => {
-  // Accordion Toggle - keep this!
+  // ✅ Accordion Toggle
   const buttons = document.querySelectorAll('.accordion-button');
   buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -312,172 +309,163 @@ let serialCounter = parseInt(localStorage.getItem('visitSerialCounter')) || 1;
     });
   });
 
-  // SAVED RECORDS LOGIC STARTS HERE
+  // ✅ Saved Records Setup
   const saveButton = document.getElementById('save-visit');
   const recordsList = document.getElementById('saved-records-list');
   const visitDetails = document.getElementById('visit-details');
 
-  // Load any saved visits on page load
   let visits = JSON.parse(localStorage.getItem('visits')) || [];
   renderVisitList();
 
-  // Save button listener
+  let serialCounter = parseInt(localStorage.getItem('visitSerialCounter')) || 1;
+
+  // ✅ Save button listener
   saveButton.addEventListener('click', () => {
     const visitData = collectVisitData();
-  visits.push(visitData);
-serialCounter++;
-localStorage.setItem('visitSerialCounter', serialCounter);
-localStorage.setItem('visits', JSON.stringify(visits));
-renderVisitList();
-alert('Visit saved!');
-
+    visits.push(visitData);
+    serialCounter++;
+    localStorage.setItem('visitSerialCounter', serialCounter);
+    localStorage.setItem('visits', JSON.stringify(visits));
+    renderVisitList();
+    alert('Visit saved!');
   });
 
- function collectVisitData() {
-  const profileForm = document.getElementById('patient-profile-form');
-  const medicalForm = document.getElementById('medical-history-form');
-  const symptomsForm = document.getElementById('symptoms-form');
-  const vitalsForm = document.getElementById('vital-signs-form');
-  const bloodForm = document.getElementById('blood-tests-form');
-  const urineForm = document.getElementById('urine-tests-form');
-  const ultrasoundForm = document.getElementById('ultrasound-report-form');
-  const prescriptionForm = document.getElementById('prescription-form');
-  const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
-  const patientDiagnosis = document.getElementById('patient-diagnosis').value;
+  // ✅ Function 1: collectVisitData
+  function collectVisitData() {
+    const profileForm = document.getElementById('patient-profile-form');
+    const medicalForm = document.getElementById('medical-history-form');
+    const symptomsForm = document.getElementById('symptoms-form');
+    const vitalsForm = document.getElementById('vital-signs-form');
+    const bloodForm = document.getElementById('blood-tests-form');
+    const urineForm = document.getElementById('urine-tests-form');
+    const ultrasoundForm = document.getElementById('ultrasound-report-form');
+    const prescriptionForm = document.getElementById('prescription-form');
+    const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
+    const patientDiagnosis = document.getElementById('patient-diagnosis').value;
 
-  // ✅ Generate unique ID in DDMMYY-0001 format
-  const today = new Date();
-  const day = String(today.getDate()).padStart(2, '0');
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const year = String(today.getFullYear()).slice(-2);
-  const datePart = `${day}${month}${year}`;
-  const serialNumber = String(serialCounter).padStart(4, '0');
-  const visitId = `${datePart}-${serialNumber}`;
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const year = String(today.getFullYear()).slice(-2);
+    const datePart = `${day}${month}${year}`;
+    const serialNumber = String(serialCounter).padStart(4, '0');
+    const visitId = `${datePart}-${serialNumber}`;
 
-  return {
-    id: visitId,
-    date: datePart,
-    serial: serialNumber,
-    profile: Object.fromEntries(new FormData(profileForm)),
-    medical: Object.fromEntries(new FormData(medicalForm)),
-    symptoms: Object.fromEntries(new FormData(symptomsForm)),
-    vitals: Object.fromEntries(new FormData(vitalsForm)),
-    blood: Object.fromEntries(new FormData(bloodForm)),
-    urine: Object.fromEntries(new FormData(urineForm)),
-    ultrasound: Object.fromEntries(new FormData(ultrasoundForm)),
-    prescription: Object.fromEntries(new FormData(prescriptionForm)),
-    diagnosis: {
-      doctor: doctorDiagnosis,
-      patient: patientDiagnosis
-    }
-  };
-}
-
-function renderFields(data) {
-  return Object.entries(data)
-    .map(([key, value]) => `<li><strong>${key}:</strong> ${value ? value : 'Not provided'}</li>`)
-    .join('');
-}
-function renderVisitList() {
-  recordsList.innerHTML = '';
-  if (visits.length === 0) {
-    recordsList.innerHTML = '<p>No saved records yet.</p>';
-    return;
-  }
-
-  visits.forEach((visit, index) => {
-    const li = document.createElement('li');
-
-    // Visit label (clickable)
-    const label = document.createElement('span');
-    label.textContent = visit.id || `Visit ${index + 1}`;
-
-    label.style.cursor = 'pointer';
-    label.style.marginRight = '1rem';
-    label.addEventListener('click', () => {
-      displayVisitDetails(visit);
-    });
-
-    // Delete button
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = '🗑️ Delete';
-    deleteButton.style.marginLeft = '1rem';
-    deleteButton.style.backgroundColor = '#e53935';
-    deleteButton.style.color = 'white';
-    deleteButton.style.border = 'none';
-    deleteButton.style.padding = '0.25rem 0.5rem';
-    deleteButton.style.borderRadius = '4px';
-    deleteButton.style.cursor = 'pointer';
-
-    deleteButton.addEventListener('click', () => {
-      if (confirm('Are you sure you want to delete this visit?')) {
-        visits.splice(index, 1);
-        localStorage.setItem('visits', JSON.stringify(visits));
-        renderVisitList();
-        visitDetails.innerHTML = '';
+    return {
+      id: visitId,
+      date: datePart,
+      serial: serialNumber,
+      profile: Object.fromEntries(new FormData(profileForm)),
+      medical: Object.fromEntries(new FormData(medicalForm)),
+      symptoms: Object.fromEntries(new FormData(symptomsForm)),
+      vitals: Object.fromEntries(new FormData(vitalsForm)),
+      blood: Object.fromEntries(new FormData(bloodForm)),
+      urine: Object.fromEntries(new FormData(urineForm)),
+      ultrasound: Object.fromEntries(new FormData(ultrasoundForm)),
+      prescription: Object.fromEntries(new FormData(prescriptionForm)),
+      diagnosis: {
+        doctor: doctorDiagnosis,
+        patient: patientDiagnosis
       }
-    });
-
-    li.appendChild(label);
-    li.appendChild(deleteButton);
-    recordsList.appendChild(li);
-  });
-}
-
-  
-  function displayVisitDetails(visit) {
-  visitDetails.innerHTML = `
-  <h4>🆔 Visit ID: ${visit.id}</h4>
-    <h4>🧾 Patient Profile</h4>
-    <ul>
-      ${renderFields(visit.profile)}
-    </ul>
-
-    <h4>🗂️ Medical History</h4>
-    <ul>
-      ${renderFields(visit.medical)}
-    </ul>
-
-    <h4>🩹 Symptoms</h4>
-    <ul>
-      ${renderFields(visit.symptoms)}
-    </ul>
-
-    <h4>💓 Vital Signs</h4>
-    <ul>
-      ${renderFields(visit.vitals)}
-    </ul>
-
-    <h4>🩸 Blood Tests</h4>
-    <ul>
-      ${renderFields(visit.blood)}
-    </ul>
-
-    <h4>💧 Urine Tests</h4>
-    <ul>
-      ${renderFields(visit.urine)}
-    </ul>
-
-    <h4>🖼️ Ultrasound Report</h4>
-    <ul>
-      ${renderFields(visit.ultrasound)}
-    </ul>
-
-    <h4>💊 Prescription</h4>
-    <ul>
-      ${renderFields(visit.prescription)}
-    </ul>
-
-    <h4>🧭 AI Diagnosis</h4>
-    <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
-    <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
-  `;
-}
-
+    };
   }
-);
 
-  </script>
+  // ✅ Function 2: renderFields
+  function renderFields(data) {
+    return Object.entries(data)
+      .map(([key, value]) => `<li><strong>${key}:</strong> ${value ? value : 'Not provided'}</li>`)
+      .join('');
+  }
+
+  // ✅ Function 3: renderVisitList
+  function renderVisitList() {
+    recordsList.innerHTML = '';
+    if (visits.length === 0) {
+      recordsList.innerHTML = '<p>No saved records yet.</p>';
+      return;
+    }
+
+    visits.forEach((visit, index) => {
+      const li = document.createElement('li');
+
+      const label = document.createElement('span');
+      label.textContent = visit.id || `Visit ${index + 1}`;
+      label.style.cursor = 'pointer';
+      label.style.marginRight = '1rem';
+      label.addEventListener('click', () => {
+        displayVisitDetails(visit);
+      });
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = '🗑️ Delete';
+      deleteButton.style.marginLeft = '1rem';
+      deleteButton.style.backgroundColor = '#e53935';
+      deleteButton.style.color = 'white';
+      deleteButton.style.border = 'none';
+      deleteButton.style.padding = '0.25rem 0.5rem';
+      deleteButton.style.borderRadius = '4px';
+      deleteButton.style.cursor = 'pointer';
+
+      deleteButton.addEventListener('click', () => {
+        if (confirm('Are you sure you want to delete this visit?')) {
+          visits.splice(index, 1);
+          localStorage.setItem('visits', JSON.stringify(visits));
+          renderVisitList();
+          visitDetails.innerHTML = '';
+        }
+      });
+
+      li.appendChild(label);
+      li.appendChild(deleteButton);
+      recordsList.appendChild(li);
+    });
+  }
+
+  // ✅ Function 4: displayVisitDetails
+  function displayVisitDetails(visit) {
+    visitDetails.innerHTML = `
+      <h4>🆔 Visit ID: ${visit.id}</h4>
+      <h4>🧾 Patient Profile</h4>
+      <ul>
+        ${renderFields(visit.profile)}
+      </ul>
+      <h4>🗂️ Medical History</h4>
+      <ul>
+        ${renderFields(visit.medical)}
+      </ul>
+      <h4>🩹 Symptoms</h4>
+      <ul>
+        ${renderFields(visit.symptoms)}
+      </ul>
+      <h4>💓 Vital Signs</h4>
+      <ul>
+        ${renderFields(visit.vitals)}
+      </ul>
+      <h4>🩸 Blood Tests</h4>
+      <ul>
+        ${renderFields(visit.blood)}
+      </ul>
+      <h4>💧 Urine Tests</h4>
+      <ul>
+        ${renderFields(visit.urine)}
+      </ul>
+      <h4>🖼️ Ultrasound Report</h4>
+      <ul>
+        ${renderFields(visit.ultrasound)}
+      </ul>
+      <h4>💊 Prescription</h4>
+      <ul>
+        ${renderFields(visit.prescription)}
+      </ul>
+      <h4>🧭 AI Diagnosis</h4>
+      <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
+      <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
+    `;
+  }
+
+});
+</script>
+
   
 </body>
 </html>
