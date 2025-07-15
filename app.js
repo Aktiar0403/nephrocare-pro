@@ -464,6 +464,14 @@ function checkBloodTestRanges() {
   });
 }
 
+// Accordion toggle logic
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.classList.toggle('active');
+    const content = header.nextElementSibling;
+    content.classList.toggle('active');
+  });
+});
 
 // Call on page load
 window.addEventListener('load', () => {
