@@ -354,6 +354,11 @@
       }
     };
   }
+function renderFields(data) {
+  return Object.entries(data)
+    .map(([key, value]) => `<li><strong>${key}:</strong> ${value ? value : 'Not provided'}</li>`)
+    .join('');
+}
 
   function renderVisitList() {
     recordsList.innerHTML = '';
@@ -373,30 +378,53 @@
   }
 
   function displayVisitDetails(visit) {
-    visitDetails.innerHTML = `
-      <h4>🧾 Patient Profile</h4>
-      <p><strong>Name:</strong> ${visit.profile['patient-name']}</p>
-      <p><strong>Age:</strong> ${visit.profile['patient-age']}</p>
-      <p><strong>Gender:</strong> ${visit.profile['patient-gender']}</p>
-      <p><strong>Location:</strong> ${visit.profile['patient-location']}</p>
-      <h4>🗂️ Medical History</h4>
-      <pre>${JSON.stringify(visit.medical, null, 2)}</pre>
-      <h4>🩹 Symptoms</h4>
-      <pre>${JSON.stringify(visit.symptoms, null, 2)}</pre>
-      <h4>💓 Vital Signs</h4>
-      <pre>${JSON.stringify(visit.vitals, null, 2)}</pre>
-      <h4>🩸 Blood Tests</h4>
-      <pre>${JSON.stringify(visit.blood, null, 2)}</pre>
-      <h4>💧 Urine Tests</h4>
-      <pre>${JSON.stringify(visit.urine, null, 2)}</pre>
-      <h4>🖼️ Ultrasound Report</h4>
-      <pre>${JSON.stringify(visit.ultrasound, null, 2)}</pre>
-      <h4>💊 Prescription</h4>
-      <pre>${JSON.stringify(visit.prescription, null, 2)}</pre>
-      <h4>🧭 AI Diagnosis</h4>
-      <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor}</p>
-      <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient}</p>
-    `;
+  visitDetails.innerHTML = `
+    <h4>🧾 Patient Profile</h4>
+    <ul>
+      ${renderFields(visit.profile)}
+    </ul>
+
+    <h4>🗂️ Medical History</h4>
+    <ul>
+      ${renderFields(visit.medical)}
+    </ul>
+
+    <h4>🩹 Symptoms</h4>
+    <ul>
+      ${renderFields(visit.symptoms)}
+    </ul>
+
+    <h4>💓 Vital Signs</h4>
+    <ul>
+      ${renderFields(visit.vitals)}
+    </ul>
+
+    <h4>🩸 Blood Tests</h4>
+    <ul>
+      ${renderFields(visit.blood)}
+    </ul>
+
+    <h4>💧 Urine Tests</h4>
+    <ul>
+      ${renderFields(visit.urine)}
+    </ul>
+
+    <h4>🖼️ Ultrasound Report</h4>
+    <ul>
+      ${renderFields(visit.ultrasound)}
+    </ul>
+
+    <h4>💊 Prescription</h4>
+    <ul>
+      ${renderFields(visit.prescription)}
+    </ul>
+
+    <h4>🧭 AI Diagnosis</h4>
+    <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
+    <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
+  `;
+}
+
   }
 });
 
