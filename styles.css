@@ -41,9 +41,9 @@ footer {
 }
 
 .accordion-content {
-  padding: 0 1rem;
-  max-height: 0;
-  overflow: hidden;
+  padding: 1rem;
+  max-height: 1000;
+  overflow: auto;
   transition: max-height 0.3s ease;
   background-color: #e0f2f1;
   border-radius: 5px;
