@@ -367,23 +367,22 @@ function displayVisitDetails(visit) {
 <section>
   <h4>🩺 Medical History</h4>
   <ul>
-    ${Object.entries(visit.medicalHistory)
-      .map(([key, value]) => `<li>${key.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}: ${value === true ? 'Yes' : value === false ? 'No' : value}</li>`)
+  ${Object.entries(visit.medicalHistory)
+    .map(([key, value]) => `<li>${formatKey(key)}: ${value === true ? 'Yes' : value === false ? 'No' : value}</li>`)
+    .join('')}
+</ul>
 
-      .join('')}
-  </ul>
 </section>
 
 <section>
   <h4>🩹 Symptoms</h4>
   <ul>
-    ${
-      Object.entries(visit.symptoms)
-        .filter(([_, value]) => value)
-        .map(([key]) => `<li>${key.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}</li>`)
-        .join('') || '<li>None reported</li>'
-    }
-  </ul>
+  ${Object.entries(visit.symptoms)
+    .filter(([k, v]) => v)
+    .map(([key]) => `<li>${formatKey(key)}</li>`)
+    .join('') || '<li>None reported</li>'}
+</ul>
+
 </section>
 
    <section>
@@ -400,29 +399,31 @@ function displayVisitDetails(visit) {
     <section>
       <h4>🧪 Blood Tests</h4>
       <ul>
-        ${Object.entries(visit.bloodTests).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
-      </ul>
+  ${Object.entries(visit.bloodTests)
+    .map(([key, value]) => `<li>${formatKey(key)}: ${value}</li>`)
+    .join('')}
+</ul>
+
     </section>
 
     <section>
       <h4>💧 Urine Tests</h4>
       <ul>
-        ${Object.entries(visit.urineTests).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
-      </ul>
+  ${Object.entries(visit.urineTests)
+    .map(([key, value]) => `<li>${formatKey(key)}: ${value}</li>`)
+    .join('')}
+</ul>
+
     </section>
 
     <section>
-      <h4>🖼️ Ultrasound Report</h4>
-      <ul>
-        <li>Kidney Size: ${visit.ultrasoundReport.kidneySize}</li>
-        <li>Echogenicity: ${visit.ultrasoundReport.echogenicity}</li>
-        <li>Parenchymal Thickness: ${visit.ultrasoundReport.parenchymalThickness}</li>
-        <li>Hydronephrosis: ${visit.ultrasoundReport.hydronephrosis}</li>
-        <li>Stones: ${visit.ultrasoundReport.stones}</li>
-        <li>Cysts: ${visit.ultrasoundReport.cysts}</li>
-        <li>Other Findings: ${visit.ultrasoundReport.otherFindings.join(', ') || 'None'}</li>
-      </ul>
-    </section>
+  <h4>🖼️ Ultrasound Report</h4>
+  <ul>
+    ${Object.entries(visit.ultrasoundReport)
+      .map(([key, value]) => `<li>${formatKey(key)}: ${Array.isArray(value) ? value.join(', ') || 'None' : value}</li>`)
+      .join('')}
+  </ul>
+</section>
 
     <section>
       <h4>🧭 AI Diagnosis</h4>
@@ -430,15 +431,15 @@ function displayVisitDetails(visit) {
       <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient}</p>
     </section>
 
-    <section>
-      <h4>💊 Prescription</h4>
-      <ul>
-        <li><strong>Medicine:</strong> ${visit.prescription.medicineName}</li>
-        <li><strong>Dose:</strong> ${visit.prescription.dose}</li>
-        <li><strong>Doctor Notes:</strong> ${visit.prescription.notes}</li>
-        <li><strong>Patient Instructions:</strong> ${visit.prescription.patientInstructions}</li>
-      </ul>
-    </section>
+   <section>
+  <h4>💊 Prescription</h4>
+  <ul>
+    ${Object.entries(visit.prescription)
+      .map(([key, value]) => `<li>${formatKey(key)}: ${value}</li>`)
+      .join('')}
+  </ul>
+</section>
+
   `;
 }
 function checkBloodTestRanges() {
@@ -587,4 +588,9 @@ function formatObject(obj) {
       return `${key}: ${value}`;
     })
     .join('\n');
+}
+function formatKey(key) {
+  return key
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/^./, c => c.toUpperCase());
 }
