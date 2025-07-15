@@ -308,5 +308,107 @@
       });
     });
   </script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Accordion Toggle - keep this!
+  const buttons = document.querySelectorAll('.accordion-button');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      if (!content) return;
+      content.classList.toggle('show');
+    });
+  });
+
+  // SAVED RECORDS LOGIC STARTS HERE
+  const saveButton = document.getElementById('save-visit');
+  const recordsList = document.getElementById('saved-records-list');
+  const visitDetails = document.getElementById('visit-details');
+
+  // Load any saved visits on page load
+  let visits = JSON.parse(localStorage.getItem('visits')) || [];
+  renderVisitList();
+
+  // Save button listener
+  saveButton.addEventListener('click', () => {
+    const visitData = collectVisitData();
+    visits.push(visitData);
+    localStorage.setItem('visits', JSON.stringify(visits));
+    renderVisitList();
+    alert('Visit saved!');
+  });
+
+  function collectVisitData() {
+    const profileForm = document.getElementById('patient-profile-form');
+    const medicalForm = document.getElementById('medical-history-form');
+    const symptomsForm = document.getElementById('symptoms-form');
+    const vitalsForm = document.getElementById('vital-signs-form');
+    const bloodForm = document.getElementById('blood-tests-form');
+    const urineForm = document.getElementById('urine-tests-form');
+    const ultrasoundForm = document.getElementById('ultrasound-report-form');
+    const prescriptionForm = document.getElementById('prescription-form');
+    const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
+    const patientDiagnosis = document.getElementById('patient-diagnosis').value;
+
+    return {
+      profile: Object.fromEntries(new FormData(profileForm)),
+      medical: Object.fromEntries(new FormData(medicalForm)),
+      symptoms: Object.fromEntries(new FormData(symptomsForm)),
+      vitals: Object.fromEntries(new FormData(vitalsForm)),
+      blood: Object.fromEntries(new FormData(bloodForm)),
+      urine: Object.fromEntries(new FormData(urineForm)),
+      ultrasound: Object.fromEntries(new FormData(ultrasoundForm)),
+      prescription: Object.fromEntries(new FormData(prescriptionForm)),
+      diagnosis: {
+        doctor: doctorDiagnosis,
+        patient: patientDiagnosis
+      }
+    };
+  }
+
+  function renderVisitList() {
+    recordsList.innerHTML = '';
+    if (visits.length === 0) {
+      recordsList.innerHTML = '<p>No saved records yet.</p>';
+      return;
+    }
+    visits.forEach((visit, index) => {
+      const li = document.createElement('li');
+      li.textContent = `Visit ${index + 1}`;
+      li.style.cursor = 'pointer';
+      li.addEventListener('click', () => {
+        displayVisitDetails(visit);
+      });
+      recordsList.appendChild(li);
+    });
+  }
+
+  function displayVisitDetails(visit) {
+    visitDetails.innerHTML = `
+      <h4>🧾 Patient Profile</h4>
+      <p><strong>Name:</strong> ${visit.profile['patient-name']}</p>
+      <p><strong>Age:</strong> ${visit.profile['patient-age']}</p>
+      <p><strong>Gender:</strong> ${visit.profile['patient-gender']}</p>
+      <p><strong>Location:</strong> ${visit.profile['patient-location']}</p>
+      <h4>🗂️ Medical History</h4>
+      <pre>${JSON.stringify(visit.medical, null, 2)}</pre>
+      <h4>🩹 Symptoms</h4>
+      <pre>${JSON.stringify(visit.symptoms, null, 2)}</pre>
+      <h4>💓 Vital Signs</h4>
+      <pre>${JSON.stringify(visit.vitals, null, 2)}</pre>
+      <h4>🩸 Blood Tests</h4>
+      <pre>${JSON.stringify(visit.blood, null, 2)}</pre>
+      <h4>💧 Urine Tests</h4>
+      <pre>${JSON.stringify(visit.urine, null, 2)}</pre>
+      <h4>🖼️ Ultrasound Report</h4>
+      <pre>${JSON.stringify(visit.ultrasound, null, 2)}</pre>
+      <h4>💊 Prescription</h4>
+      <pre>${JSON.stringify(visit.prescription, null, 2)}</pre>
+      <h4>🧭 AI Diagnosis</h4>
+      <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor}</p>
+      <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient}</p>
+    `;
+  }
+});
+
 </body>
 </html>
