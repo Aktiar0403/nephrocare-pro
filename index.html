@@ -358,6 +358,58 @@ document.addEventListener('DOMContentLoaded', () => {
   let serialCounter = parseInt(localStorage.getItem('visitSerialCounter')) || 1;
   let diagnosisRules = JSON.parse(localStorage.getItem('diagnosisRules')) || [];
 renderRulesList();
+const defaultDiagnosisRules = [
+  // Simple rules
+  { type: "simple", test: "egfr", operator: "<", threshold: 90, suggestion: "CKD Stage 2", reason: "KDIGO guidelines" },
+  { type: "simple", test: "egfr", operator: "<", threshold: 60, suggestion: "CKD Stage 3", reason: "Moderate reduction" },
+  { type: "simple", test: "egfr", operator: "<", threshold: 30, suggestion: "CKD Stage 4", reason: "Severe reduction" },
+  { type: "simple", test: "egfr", operator: "<", threshold: 15, suggestion: "CKD Stage 5 (ESRD)", reason: "Kidney failure" },
+  { type: "simple", test: "acr", operator: ">", threshold: 30, suggestion: "Microalbuminuria", reason: "Early kidney damage" },
+  { type: "simple", test: "acr", operator: ">", threshold: 300, suggestion: "Nephrotic-range proteinuria", reason: "Severe glomerular disease" },
+
+  // Advanced rule
+  {
+    type: "multi",
+    conditions: [
+      { section: "blood", field: "egfr", operator: "<", value: 60 },
+      { section: "urine", field: "acr", operator: ">", value: 300 }
+    ],
+    suggestion: "Proteinuric CKD",
+    reason: "Combined eGFR reduction and albuminuria."
+  },
+
+  // Complex compound rule
+  {
+    type: "compound",
+    conditions: [
+      { section: "history", field: "diabetes", operator: "==", value: true },
+      { section: "blood", field: "egfr", operator: "<", value: 60 },
+      { section: "urine", field: "acr", operator: ">", value: 300 },
+      { section: "ultrasound", field: "echogenicity", operator: "in", value: ["Mildly increased", "Markedly increased"] }
+    ],
+    suggestion: "Likely Diabetic Nephropathy",
+    reason: "Combines history, labs, USG."
+  },
+  {
+    type: "compound",
+    conditions: [
+      { section: "history", field: "hypertension", operator: "==", value: true },
+      { section: "blood", field: "egfr", operator: "<", value: 60 },
+      { section: "urine", field: "acr", operator: "<", value: 300 },
+      { section: "ultrasound", field: "kidneySize", operator: "==", value: "Decreased" },
+      { section: "ultrasound", field: "echogenicity", operator: "==", value: "Mildly increased" }
+    ],
+    suggestion: "Possible Hypertensive Nephrosclerosis",
+    reason: "Classic imaging + lab pattern."
+    
+  }
+  
+];
+
+if (!diagnosisRules.length) {
+  diagnosisRules = defaultDiagnosisRules;
+  localStorage.setItem('diagnosisRules', JSON.stringify(diagnosisRules));
+}
 
 
 document.getElementById('save-rule').addEventListener('click', () => {
@@ -422,7 +474,6 @@ function renderRulesList() {
     rulesList.appendChild(li);
   });
 }
-
 
   // ✅ Save button listener
   saveButton.addEventListener('click', () => {
@@ -565,58 +616,103 @@ function renderRulesList() {
     });
   }
 
-  // ✅ Function 4: displayVisitDetails
   function displayVisitDetails(visit) {
-    visitDetails.innerHTML = `
-      <h4>🆔 Visit ID: ${visit.id}</h4>
-      <h4>🧾 Patient Profile</h4>
-      <ul>
-        ${renderFields(visit.profile)}
-      </ul>
-      <h4>🗂️ Medical History</h4>
-      <ul>
-        ${renderFields(visit.medical)}
-      </ul>
-      <h4>🩹 Symptoms</h4>
-      <ul>
-        ${renderFields(visit.symptoms)}
-      </ul>
-      <h4>💓 Vital Signs</h4>
-      <ul>
-        ${renderFields(visit.vitals)}
-      </ul>
-      <h4>🩸 Blood Tests</h4>
-      <ul>
-        ${renderFields(visit.blood)}
-      </ul>
-      <h4>💧 Urine Tests</h4>
-      <ul>
-        ${renderFields(visit.urine)}
-      </ul>
-      <h4>🖼️ Ultrasound Report</h4>
-      <ul>
-        ${renderFields(visit.ultrasound)}
-      </ul>
-      <h4>💊 Prescription</h4>
-      <ul>
-        ${renderFields(visit.prescription)}
-      </ul>
-      <h4>🧭 AI Diagnosis</h4>
-      <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
-      <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
-    `;
-    document.getElementById('export-button').style.display = 'block';
-document.getElementById('export-button').onclick = () => {
-  const exportText = generateExportText(visit);
-  document.getElementById('export-text').value = exportText;
-  document.getElementById('export-text').style.display = 'block';
-};
+  visitDetails.innerHTML = `
+    <h4>🆔 Visit ID: ${visit.id}</h4>
+    <h4>🧾 Patient Profile</h4>
+    <ul>
+      ${renderFields(visit.profile)}
+    </ul>
+    <h4>🗂️ Medical History</h4>
+    <ul>
+      ${renderFields(visit.medical)}
+    </ul>
+    <h4>🩹 Symptoms</h4>
+    <ul>
+      ${renderFields(visit.symptoms)}
+    </ul>
+    <h4>💓 Vital Signs</h4>
+    <ul>
+      ${renderFields(visit.vitals)}
+    </ul>
+    <h4>🩸 Blood Tests</h4>
+    <ul>
+      ${renderFields(visit.blood)}
+    </ul>
+    <h4>💧 Urine Tests</h4>
+    <ul>
+      ${renderFields(visit.urine)}
+    </ul>
+    <h4>🖼️ Ultrasound Report</h4>
+    <ul>
+      ${renderFields(visit.ultrasound)}
+    </ul>
+    <h4>💊 Prescription</h4>
+    <ul>
+      ${renderFields(visit.prescription)}
+    </ul>
+    <h4>🧭 AI Diagnosis</h4>
+    <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
+    <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
+  `;
 
+  document.getElementById('export-button').style.display = 'block';
+  document.getElementById('export-button').onclick = () => {
+    const exportText = generateExportText(visit);
+    document.getElementById('export-text').value = exportText;
+    document.getElementById('export-text').style.display = 'block';
+  };
+}
+function evaluateCondition(cond, visit) {
+  const sectionData = visit[cond.section];
+  if (!sectionData) return false;
+
+  const val = sectionData[cond.field];
+  if (val === undefined) return false;
+
+  switch (cond.operator) {
+    case "<": return parseFloat(val) < cond.value;
+    case ">": return parseFloat(val) > cond.value;
+    case "==": return val == cond.value;
+    case "in": return cond.value.includes(val);
+    default: return false;
+  }
+}
+
+function evaluateRule(rule, visit) {
+  if (rule.type === "simple") {
+    return evaluateCondition({
+      section: "blood",
+      field: rule.test,
+      operator: rule.operator,
+      value: rule.threshold
+    }, visit);
   }
 
-});
-</script>
+  if (rule.type === "multi" || rule.type === "compound") {
+    return rule.conditions.every(cond => evaluateCondition(cond, visit));
+  }
 
-  
+  return false;
+}
+
+function generateDiagnosisText(visit) {
+  const matches = [];
+  for (const rule of diagnosisRules) {
+    if (evaluateRule(rule, visit)) {
+      matches.push(`- ${rule.suggestion} (Reason: ${rule.reason})`);
+    }
+  }
+  return matches.length ? matches.join('\n') : "No diagnosis suggestions matched.";
+}
+
+document.getElementById('generate-diagnosis').addEventListener('click', () => {
+  const visitData = collectVisitData();
+  const diagnosisText = generateDiagnosisText(visitData);
+
+  document.getElementById('doctor-diagnosis').value = diagnosisText;
+  document.getElementById('patient-diagnosis').value = diagnosisText;
+});
+</script> 
 </body>
 </html>
