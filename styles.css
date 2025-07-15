@@ -41,19 +41,17 @@ footer {
 }
 
 .accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  display: none;
   padding: 0 1rem;
   background-color: #e0f2f1;
   border-radius: 5px;
 }
 
 .accordion-content.active {
-  max-height: none;
-  overflow: visible;
+  display: block;
   padding: 1rem;
 }
+
 
 
 .accordion-content p {
