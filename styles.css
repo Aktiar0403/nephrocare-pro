@@ -50,10 +50,11 @@ footer {
 }
 
 .accordion-content.active {
-  max-height: 1000px;
-  overflow: auto;
+  max-height: none;
+  overflow: visible;
   padding: 1rem;
 }
+
 
 .accordion-content p {
   margin: 1rem 0;
