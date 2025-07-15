@@ -467,9 +467,17 @@ function checkBloodTestRanges() {
 // Accordion toggle logic
 document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', () => {
-    header.classList.toggle('active');
     const content = header.nextElementSibling;
-    content.classList.toggle('active');
+
+    // Toggle active on header (optional styling)
+    header.classList.toggle('active');
+
+    // Toggle active on content to show/hide
+    if (content.classList.contains('active')) {
+      content.classList.remove('active');
+    } else {
+      content.classList.add('active');
+    }
   });
 });
 
