@@ -110,6 +110,28 @@
     <label><input type="checkbox" id="hematuria" name="hematuria"> Hematuria (Blood in urine)</label>
   </form>
 </div>
+<!-- Vital Signs Accordion -->
+<button class="accordion-button">Vital Signs</button>
+<div class="accordion-content">
+  <form id="vital-signs-form">
+    <label for="sbp">Systolic BP (mmHg):</label>
+    <input type="number" id="sbp" name="sbp" placeholder="Enter SBP">
+
+    <label for="dbp">Diastolic BP (mmHg):</label>
+    <input type="number" id="dbp" name="dbp" placeholder="Enter DBP">
+
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" placeholder="Enter weight">
+
+    <label for="volume-status">Volume Status:</label>
+    <select id="volume-status" name="volume-status">
+      <option value="">Select status</option>
+      <option value="Normal">Normal</option>
+      <option value="Hypervolemic">Hypervolemic (Fluid overload)</option>
+      <option value="Hypovolemic">Hypovolemic (Dehydrated)</option>
+    </select>
+  </form>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
