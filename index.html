@@ -901,45 +901,43 @@ function getMedicinesForDiagnosis(diagnosisText) {
 
 
 setupReferenceHelpers();
-document.getElementById('print-prescription').addEventListener('click', () => {
-  const symptomsForm = document.getElementById('symptoms-form');
-  const symptoms = Object.entries(Object.fromEntries(new FormData(symptomsForm)))
-    .filter(([key, val]) => val === "on")
-    .map(([key]) => key.replace(/-/g, ' '))
-    .join(', ') || 'None reported';
+document.getElementById('generate-diagnosis').addEventListener('click', () => {
+  const visitData = collectVisitData();
+  const diagnosisText = generateDiagnosisText(visitData).trim();
 
-  const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
-  const patientDiagnosis = document.getElementById('patient-diagnosis').value;
-  const medName = document.getElementById('med-name').value;
-  const dose = document.getElementById('dose').value;
-  const notes = document.getElementById('notes').value;
-  const patientInstructions = document.getElementById('patient-instructions').value;
+  // If no diagnosis found, show fallback
+  if (!diagnosisText || diagnosisText === "No diagnosis suggestions matched.") {
+    document.getElementById('doctor-diagnosis').value = "No significant diagnosis. Stay healthy!";
+    document.getElementById('patient-diagnosis').value = "No worries, you are Healthy!";
+    document.getElementById('med-name').value = "No medicines needed!";
+    document.getElementById('dose').value = '';
+    document.getElementById('notes').value = '';
+    document.getElementById('patient-instructions').value = '';
+    return;
+  }
 
-  const doctorName = prompt("Enter Doctor's Name for Signature:", "Dr. Aktiar Boss") || "____________________";
+  // Fill diagnosis fields
+  document.getElementById('doctor-diagnosis').value = diagnosisText;
+  document.getElementById('patient-diagnosis').value = diagnosisText;
 
-  const printableDiv = document.getElementById('printable-prescription');
-  printableDiv.innerHTML = `
-    <h2>🩺 Dr. NephroCare Pro</h2>
-    <p><strong>Symptoms:</strong> ${symptoms}</p>
-    <p><strong>Diagnosis (Doctor-level):</strong> ${doctorDiagnosis}</p>
-    <p><strong>Diagnosis (Patient-friendly):</strong> ${patientDiagnosis}</p>
-    <h3>Prescription</h3>
-    <ul>
-      <li><strong>Medicine Name:</strong> ${medName || 'None'}</li>
-      <li><strong>Dose:</strong> ${dose || 'Not specified'}</li>
-      <li><strong>Doctor Notes:</strong> ${notes || 'None'}</li>
-      <li><strong>Patient Instructions:</strong> ${patientInstructions || 'None'}</li>
-    </ul>
-    <br>
-    <p>Verified by: ${doctorName}</p>
-  `;
+  // Suggest medicines
+  const meds = getMedicinesForDiagnosis(diagnosisText);
+  let medNames;
+  if (meds.length === 0) {
+    medNames = "No worries, you are Healthy!";
+  } else {
+    medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
+  }
 
-  printableDiv.style.display = 'block';
-  window.print();
-  printableDiv.style.display = 'none';
+  document.getElementById('med-name').value = medNames;
+  document.getElementById('dose').value = '';
+  document.getElementById('notes').value = '';
+  document.getElementById('patient-instructions').value = '';
 });
 
-})
+});
+
+
 </script> 
 <div id="printable-prescription" style="display:none;"></div>
 
