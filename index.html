@@ -35,6 +35,7 @@
 <body>
   <h1>NephroCare Pro</h1>
 
+  <!-- Patient Profile -->
   <button class="accordion-button">Patient Profile</button>
   <div class="accordion-content">
     <form id="patient-profile-form">
@@ -57,13 +58,9 @@
     </form>
   </div>
 
-  <script>
-    document.querySelectorAll('.accordion-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        content.classList.toggle('show');
-      });
-    });
-  </script>
-</body>
-</html>
+  <!-- Medical History -->
+  <button class="accordion-button">Medical History</button>
+  <div class="accordion-content">
+    <form id="medical-history-form">
+      <label><input type="checkbox" id="diabetes" name="diabetes"> Diabetes</label>
+      <input type="number" id="diabetes-duration" name="diabetes-duration" placeholder="Dura
