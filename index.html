@@ -865,13 +865,21 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
   document.getElementById('patient-diagnosis').value = diagnosisText;
 
   // Auto-suggest medicines
-  const meds = getMedicinesForDiagnosis(diagnosisText);
-  const medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
+  // Auto-suggest medicines
+const meds = getMedicinesForDiagnosis(diagnosisText);
 
-  document.getElementById('med-name').value = medNames;
-  document.getElementById('dose').value = '';
-  document.getElementById('notes').value = '';
-  document.getElementById('patient-instructions').value = '';
+let medNames;
+if (meds.length === 0) {
+  medNames = "No worries, you are Healthy!";
+} else {
+  medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
+}
+
+document.getElementById('med-name').value = medNames;
+document.getElementById('dose').value = '';
+document.getElementById('notes').value = '';
+document.getElementById('patient-instructions').value = '';
+
 });
 function getMedicinesForDiagnosis(diagnosisText) {
   const lowerDiag = diagnosisText.toLowerCase();
