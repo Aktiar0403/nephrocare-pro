@@ -14,6 +14,39 @@ form label {
   margin-top: 0.5rem;
   font-weight: bold;
 }
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-prescription, #printable-prescription * {
+    visibility: visible;
+  }
+
+  #printable-prescription {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+
+  #printable-prescription h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #printable-prescription ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  #printable-prescription li {
+    margin-bottom: 0.5rem;
+  }
+}
 
 form input,
 form select,
@@ -324,6 +357,8 @@ form small {
     <label for="patient-instructions">Patient Instructions:</label>
     <textarea id="patient-instructions" name="patient-instructions" placeholder="Simple words for patient"></textarea>
   </form>
+  <button type="button" id="print-prescription">🖨️ Print Prescription</button>
+
 </div>
 <!-- Saved Records Accordion -->
 <button class="accordion-button">Saved Records</button>
@@ -392,6 +427,20 @@ const referenceRanges = {
   weight: { min: 30, max: 200 }
   // Add more as needed
 };
+let medicines = [];
+
+fetch('/medicines.json')
+  .then(response => response.json())
+  .then(data => {
+    medicines = data;
+    console.log('Medicines loaded:', medicines);
+  })
+  .catch(error => {
+    console.error('Error loading medicines:', error);
+  });
+
+
+
 
   // ✅ Accordion Toggle
   const buttons = document.querySelectorAll('.accordion-button');
@@ -814,10 +863,73 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
 
   document.getElementById('doctor-diagnosis').value = diagnosisText;
   document.getElementById('patient-diagnosis').value = diagnosisText;
+
+  // Auto-suggest medicines
+  const meds = getMedicinesForDiagnosis(diagnosisText);
+  const medNames = meds.map(m => `${m.name} (${m.type})`).join('\n');
+
+  document.getElementById('med-name').value = medNames;
+  document.getElementById('dose').value = '';
+  document.getElementById('notes').value = '';
+  document.getElementById('patient-instructions').value = '';
 });
+
+function getMedicinesForDiagnosis(diagnosisText) {
+  const suggestions = [];
+  
+  medicines.forEach(med => {
+    med.indications.forEach(indication => {
+      if (diagnosisText.toLowerCase().includes(indication.toLowerCase())) {
+        suggestions.push(med);
+      }
+    });
+  });
+  
+  return suggestions;
+}
+
 setupReferenceHelpers();
+document.getElementById('print-prescription').addEventListener('click', () => {
+  const symptomsForm = document.getElementById('symptoms-form');
+  const symptoms = Object.entries(Object.fromEntries(new FormData(symptomsForm)))
+    .filter(([key, val]) => val === "on")
+    .map(([key]) => key.replace(/-/g, ' '))
+    .join(', ') || 'None reported';
+
+  const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
+  const patientDiagnosis = document.getElementById('patient-diagnosis').value;
+  const medName = document.getElementById('med-name').value;
+  const dose = document.getElementById('dose').value;
+  const notes = document.getElementById('notes').value;
+  const patientInstructions = document.getElementById('patient-instructions').value;
+
+  const doctorName = prompt("Enter Doctor's Name for Signature:", "Dr. John Doe") || "____________________";
+
+  const printableDiv = document.getElementById('printable-prescription');
+  printableDiv.innerHTML = `
+    <h2>🩺 Dr. NephroCare Pro</h2>
+    <p><strong>Symptoms:</strong> ${symptoms}</p>
+    <p><strong>Diagnosis (Doctor-level):</strong> ${doctorDiagnosis}</p>
+    <p><strong>Diagnosis (Patient-friendly):</strong> ${patientDiagnosis}</p>
+    <h3>Prescription</h3>
+    <ul>
+      <li><strong>Medicine Name:</strong> ${medName || 'None'}</li>
+      <li><strong>Dose:</strong> ${dose || 'Not specified'}</li>
+      <li><strong>Doctor Notes:</strong> ${notes || 'None'}</li>
+      <li><strong>Patient Instructions:</strong> ${patientInstructions || 'None'}</li>
+    </ul>
+    <br>
+    <p>Verified by: ${doctorName}</p>
+  `;
+
+  printableDiv.style.display = 'block';
+  window.print();
+  printableDiv.style.display = 'none';
+});
 
 })
 </script> 
+<div id="printable-prescription" style="display:none;"></div>
+
 </body>
 </html>

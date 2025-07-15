@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "brand": "Telma 40",
+    "composition": "Telmisartan 40mg",
+    "type": "ARB",
+    "indications": [
+      "Hypertension",
+      "Proteinuric CKD",
+      "CKD Stage 3",
+      "CKD Stage 4"
+    ]
+  },
+  {
+    "id": 2,
+    "brand": "Lasix",
+    "composition": "Furosemide 40mg",
+    "type": "Loop Diuretic",
+    "indications": [
+      "Edema",
+      "Fluid Overload",
+      "Heart Failure"
+    ]
+  }
+]
