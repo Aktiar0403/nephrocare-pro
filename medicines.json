@@ -1,25 +1,2394 @@
 [
   {
     "id": 1,
-    "brand": "Telma 40",
-    "composition": "Telmisartan 40mg",
+    "name": "Telma 40",
+    "composition": "Telmisartan",
     "type": "ARB",
-    "indications": [
-      "Hypertension",
-      "Proteinuric CKD",
-      "CKD Stage 3",
-      "CKD Stage 4"
-    ]
+    "indications": ["Hypertension", "Diabetic Nephropathy"]
   },
   {
     "id": 2,
-    "brand": "Lasix",
-    "composition": "Furosemide 40mg",
+    "name": "Amlong 5",
+    "composition": "Amlodipine",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 3,
+    "name": "Losar 50",
+    "composition": "Losartan",
+    "type": "ARB",
+    "indications": ["Hypertension", "CKD"]
+  },
+  {
+    "id": 4,
+    "name": "Amaryl 1",
+    "composition": "Glimepiride",
+    "type": "Sulfonylurea",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 5,
+    "name": "Glycomet 500",
+    "composition": "Metformin",
+    "type": "Biguanide",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 6,
+    "name": "Jardiance 10",
+    "composition": "Empagliflozin",
+    "type": "SGLT2 Inhibitor",
+    "indications": ["Diabetes", "CKD"]
+  },
+  {
+    "id": 7,
+    "name": "Crestor 10",
+    "composition": "Rosuvastatin",
+    "type": "Statin",
+    "indications": ["Dyslipidemia", "CKD"]
+  },
+  {
+    "id": 8,
+    "name": "Lipitor 20",
+    "composition": "Atorvastatin",
+    "type": "Statin",
+    "indications": ["Dyslipidemia"]
+  },
+  {
+    "id": 9,
+    "name": "Olvance 20",
+    "composition": "Olmesartan",
+    "type": "ARB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 10,
+    "name": "Tenormin 50",
+    "composition": "Atenolol",
+    "type": "Beta Blocker",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 11,
+    "name": "Concor 5",
+    "composition": "Bisoprolol",
+    "type": "Beta Blocker",
+    "indications": ["Hypertension", "CHF"]
+  },
+  {
+    "id": 12,
+    "name": "Lasix 40",
+    "composition": "Furosemide",
     "type": "Loop Diuretic",
-    "indications": [
-      "Edema",
-      "Fluid Overload",
-      "Heart Failure"
-    ]
+    "indications": ["Edema", "CHF", "CKD"]
+  },
+  {
+    "id": 13,
+    "name": "Aldactone 25",
+    "composition": "Spironolactone",
+    "type": "Potassium Sparing Diuretic",
+    "indications": ["CHF", "Cirrhosis"]
+  },
+  {
+    "id": 14,
+    "name": "Zyloric 100",
+    "composition": "Allopurinol",
+    "type": "Xanthine Oxidase Inhibitor",
+    "indications": ["Gout", "CKD"]
+  },
+  {
+    "id": 15,
+    "name": "Febutaz 40",
+    "composition": "Febuxostat",
+    "type": "Xanthine Oxidase Inhibitor",
+    "indications": ["Gout"]
+  },
+  {
+    "id": 16,
+    "name": "Acitrom 1",
+    "composition": "Acenocoumarol",
+    "type": "Anticoagulant",
+    "indications": ["AF", "DVT"]
+  },
+  {
+    "id": 17,
+    "name": "Xarelto 10",
+    "composition": "Rivaroxaban",
+    "type": "DOAC",
+    "indications": ["AF", "DVT"]
+  },
+  {
+    "id": 18,
+    "name": "Eliquis 5",
+    "composition": "Apixaban",
+    "type": "DOAC",
+    "indications": ["AF", "DVT"]
+  },
+  {
+    "id": 19,
+    "name": "Shelcal 500",
+    "composition": "Calcium Carbonate + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Osteoporosis"]
+  },
+  {
+    "id": 20,
+    "name": "Calcimax Forte",
+    "composition": "Calcium Citrate + Vitamin D3 + Minerals",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 21,
+    "name": "Evion 400",
+    "composition": "Vitamin E",
+    "type": "Antioxidant",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 22,
+    "name": "Neurobion Forte",
+    "composition": "Vitamin B1 B6 B12",
+    "type": "Vitamin",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 23,
+    "name": "Pan 40",
+    "composition": "Pantoprazole",
+    "type": "PPI",
+    "indications": ["GERD", "Ulcer"]
+  },
+  {
+    "id": 24,
+    "name": "Somac 40",
+    "composition": "Esomeprazole",
+    "type": "PPI",
+    "indications": ["GERD", "Ulcer"]
+  },
+  {
+    "id": 25,
+    "name": "Domstal",
+    "composition": "Domperidone",
+    "type": "Prokinetic",
+    "indications": ["Nausea", "GERD"]
+  },
+  {
+    "id": 26,
+    "name": "Ondem 4",
+    "composition": "Ondansetron",
+    "type": "Antiemetic",
+    "indications": ["Nausea", "Vomiting"]
+  },
+  {
+    "id": 27,
+    "name": "Dolo 650",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever", "Pain"]
+  },
+  {
+    "id": 28,
+    "name": "Zerodol SP",
+    "composition": "Aceclofenac + Paracetamol + Serratiopeptidase",
+    "type": "NSAID",
+    "indications": ["Pain", "Inflammation"]
+  },
+  {
+    "id": 29,
+    "name": "Calpol 650",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever"]
+  },
+  {
+    "id": 30,
+    "name": "Augmentin 625",
+    "composition": "Amoxicillin + Clavulanic Acid",
+    "type": "Antibiotic",
+    "indications": ["Infections"]
+  },
+  {
+    "id": 31,
+    "name": "Taxim O 200",
+    "composition": "Cefixime",
+    "type": "Antibiotic",
+    "indications": ["Infections"]
+  },
+  {
+    "id": 32,
+    "name": "Azithral 500",
+    "composition": "Azithromycin",
+    "type": "Antibiotic",
+    "indications": ["Respiratory Infections"]
+  },
+  {
+    "id": 33,
+    "name": "Doxy 100",
+    "composition": "Doxycycline",
+    "type": "Antibiotic",
+    "indications": ["Infections"]
+  },
+  {
+    "id": 34,
+    "name": "Monocef 1g",
+    "composition": "Ceftriaxone",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 35,
+    "name": "Foracort Inhaler",
+    "composition": "Budesonide + Formoterol",
+    "type": "Inhaler",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 36,
+    "name": "Levolin Inhaler",
+    "composition": "Levosalbutamol",
+    "type": "Inhaler",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 37,
+    "name": "Salbutamol Syrup",
+    "composition": "Salbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 38,
+    "name": "Montair LC",
+    "composition": "Montelukast + Levocetirizine",
+    "type": "Anti-Allergic",
+    "indications": ["Allergic Rhinitis", "Asthma"]
+  },
+  {
+    "id": 39,
+    "name": "Allegra 120",
+    "composition": "Fexofenadine",
+    "type": "Antihistamine",
+    "indications": ["Allergies"]
+  },
+  {
+    "id": 40,
+    "name": "Cetcip L",
+    "composition": "Levocetirizine",
+    "type": "Antihistamine",
+    "indications": ["Allergies"]
   }
 ]
+[
+  {
+    "id": 41,
+    "name": "Cardace 5",
+    "composition": "Ramipril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 42,
+    "name": "Envas 5",
+    "composition": "Enalapril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 43,
+    "name": "Perindopril 4",
+    "composition": "Perindopril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 44,
+    "name": "Trandate 100",
+    "composition": "Labetalol",
+    "type": "Beta Blocker",
+    "indications": ["Hypertension", "Pregnancy HTN"]
+  },
+  {
+    "id": 45,
+    "name": "Nebicard 5",
+    "composition": "Nebivolol",
+    "type": "Beta Blocker",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 46,
+    "name": "Inderal 40",
+    "composition": "Propranolol",
+    "type": "Beta Blocker",
+    "indications": ["Hypertension", "Anxiety"]
+  },
+  {
+    "id": 47,
+    "name": "Nicardia Retard 20",
+    "composition": "Nifedipine",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Hypertension", "Preterm Labour"]
+  },
+  {
+    "id": 48,
+    "name": "Dilzem 30",
+    "composition": "Diltiazem",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Hypertension", "Angina"]
+  },
+  {
+    "id": 49,
+    "name": "Calaptin 40",
+    "composition": "Verapamil",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Arrhythmia"]
+  },
+  {
+    "id": 50,
+    "name": "Fruselac",
+    "composition": "Furosemide + Spironolactone",
+    "type": "Diuretic Combo",
+    "indications": ["Edema", "CHF"]
+  },
+  {
+    "id": 51,
+    "name": "Thiazide 25",
+    "composition": "Hydrochlorothiazide",
+    "type": "Thiazide Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 52,
+    "name": "Eritel 40",
+    "composition": "Telmisartan",
+    "type": "ARB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 53,
+    "name": "Olsar 20",
+    "composition": "Olmesartan",
+    "type": "ARB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 54,
+    "name": "Valzaar 80",
+    "composition": "Valsartan",
+    "type": "ARB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 55,
+    "name": "Sevikar",
+    "composition": "Olmesartan + Amlodipine",
+    "type": "ARB + CCB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 56,
+    "name": "Amloz AT",
+    "composition": "Amlodipine + Atenolol",
+    "type": "CCB + Beta Blocker",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 57,
+    "name": "Telma H",
+    "composition": "Telmisartan + Hydrochlorothiazide",
+    "type": "ARB + Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 58,
+    "name": "Losar H",
+    "composition": "Losartan + Hydrochlorothiazide",
+    "type": "ARB + Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 59,
+    "name": "Amlo 5",
+    "composition": "Amlodipine",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 60,
+    "name": "Glucophage XR 500",
+    "composition": "Metformin",
+    "type": "Biguanide",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 61,
+    "name": "Glycomet GP1",
+    "composition": "Metformin + Glimepiride",
+    "type": "Oral Hypoglycemic Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 62,
+    "name": "Voglibose 0.2",
+    "composition": "Voglibose",
+    "type": "Alpha Glucosidase Inhibitor",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 63,
+    "name": "Trajenta 5",
+    "composition": "Linagliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 64,
+    "name": "Galvus 50",
+    "composition": "Vildagliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 65,
+    "name": "Invokana 100",
+    "composition": "Canagliflozin",
+    "type": "SGLT2 Inhibitor",
+    "indications": ["Diabetes", "CKD"]
+  },
+  {
+    "id": 66,
+    "name": "Diamicron MR 60",
+    "composition": "Gliclazide",
+    "type": "Sulfonylurea",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 67,
+    "name": "Humalog Mix 25",
+    "composition": "Insulin Lispro",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 68,
+    "name": "Lantus",
+    "composition": "Insulin Glargine",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 69,
+    "name": "Mixtard 30/70",
+    "composition": "Human Insulin",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 70,
+    "name": "Novorapid",
+    "composition": "Insulin Aspart",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 71,
+    "name": "Janumet 50/500",
+    "composition": "Sitagliptin + Metformin",
+    "type": "Oral Hypoglycemic Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 72,
+    "name": "Galvus Met 50/500",
+    "composition": "Vildagliptin + Metformin",
+    "type": "Oral Hypoglycemic Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 73,
+    "name": "Zoryl M1",
+    "composition": "Glimepiride + Metformin",
+    "type": "Oral Hypoglycemic Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 74,
+    "name": "Amaryl M1",
+    "composition": "Glimepiride + Metformin",
+    "type": "Oral Hypoglycemic Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 75,
+    "name": "Ryzodeg",
+    "composition": "Insulin Degludec + Aspart",
+    "type": "Insulin Combo",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 76,
+    "name": "Basalog",
+    "composition": "Insulin Glargine",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 77,
+    "name": "Tresiba",
+    "composition": "Insulin Degludec",
+    "type": "Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 78,
+    "name": "Tolvaptan 15",
+    "composition": "Tolvaptan",
+    "type": "Vasopressin Antagonist",
+    "indications": ["Polycystic Kidney Disease"]
+  },
+  {
+    "id": 79,
+    "name": "Caldikind Plus",
+    "composition": "Calcium + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 80,
+    "name": "Uprise D3 60k",
+    "composition": "Cholecalciferol",
+    "type": "Vitamin D Supplement",
+    "indications": ["Vitamin D Deficiency"]
+  },
+  {
+    "id": 81,
+    "name": "Evion LC",
+    "composition": "Vitamin E + Levocarnitine",
+    "type": "Antioxidant",
+    "indications": ["Neuropathy", "Fertility"]
+  },
+  {
+    "id": 82,
+    "name": "Neurokind Plus",
+    "composition": "Methylcobalamin + Folic Acid + Pyridoxine",
+    "type": "Vitamin",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 83,
+    "name": "Gemcal DS",
+    "composition": "Calcium Citrate + Vitamin D3 + Minerals",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 84,
+    "name": "Supracal Pro",
+    "composition": "Calcium Citrate + Vitamin D3 + Magnesium + Zinc",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 85,
+    "name": "Shelcal HD",
+    "composition": "Calcium Carbonate + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 86,
+    "name": "Calcimax 500",
+    "composition": "Calcium Citrate + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 87,
+    "name": "Maxirich",
+    "composition": "Multivitamin",
+    "type": "Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 88,
+    "name": "Revital H",
+    "composition": "Multivitamin + Ginseng",
+    "type": "Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 89,
+    "name": "Livogen",
+    "composition": "Ferrous Fumarate + Folic Acid",
+    "type": "Iron Supplement",
+    "indications": ["Anemia"]
+  },
+  {
+    "id": 90,
+    "name": "Fefol Z",
+    "composition": "Ferrous Sulphate + Folic Acid + Zinc",
+    "type": "Iron Supplement",
+    "indications": ["Anemia"]
+  }
+][
+  {
+    "id": 91,
+    "name": "Dexorange",
+    "composition": "Ferric Ammonium Citrate + Cyanocobalamin + Folic Acid",
+    "type": "Iron Supplement",
+    "indications": ["Anemia"]
+  },
+  {
+    "id": 92,
+    "name": "Feronia XT",
+    "composition": "Ferrous Ascorbate + Folic Acid + Zinc",
+    "type": "Iron Supplement",
+    "indications": ["Anemia"]
+  },
+  {
+    "id": 93,
+    "name": "Shelcal 500",
+    "composition": "Calcium Carbonate + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 94,
+    "name": "Calcigen D",
+    "composition": "Calcium + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 95,
+    "name": "Fourderm",
+    "composition": "Clobetasol + Neomycin + Miconazole + Chlorocresol",
+    "type": "Topical Combination",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 96,
+    "name": "Betadine Ointment",
+    "composition": "Povidone Iodine",
+    "type": "Antiseptic",
+    "indications": ["Wound Care"]
+  },
+  {
+    "id": 97,
+    "name": "Fusiderm",
+    "composition": "Fusidic Acid",
+    "type": "Topical Antibiotic",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 98,
+    "name": "Panderm Plus",
+    "composition": "Clobetasol + Neomycin + Miconazole + Chlorocresol",
+    "type": "Topical Combination",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 99,
+    "name": "Lulifin Cream",
+    "composition": "Luliconazole",
+    "type": "Antifungal",
+    "indications": ["Fungal Skin Infections"]
+  },
+  {
+    "id": 100,
+    "name": "Clocip Cream",
+    "composition": "Clotrimazole",
+    "type": "Antifungal",
+    "indications": ["Fungal Skin Infections"]
+  },
+  {
+    "id": 101,
+    "name": "Candid Powder",
+    "composition": "Clotrimazole",
+    "type": "Antifungal",
+    "indications": ["Fungal Skin Infections"]
+  },
+  {
+    "id": 102,
+    "name": "Soframycin",
+    "composition": "Framycetin",
+    "type": "Topical Antibiotic",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 103,
+    "name": "Nadibact Cream",
+    "composition": "Nadifloxacin",
+    "type": "Topical Antibiotic",
+    "indications": ["Acne"]
+  },
+  {
+    "id": 104,
+    "name": "Acivir Cream",
+    "composition": "Acyclovir",
+    "type": "Antiviral",
+    "indications": ["Herpes"]
+  },
+  {
+    "id": 105,
+    "name": "Himalaya Cystone",
+    "composition": "Herbal Formulation",
+    "type": "Ayurvedic",
+    "indications": ["Kidney Stones"]
+  },
+  {
+    "id": 106,
+    "name": "Liv 52",
+    "composition": "Herbal Formulation",
+    "type": "Ayurvedic",
+    "indications": ["Liver Support"]
+  },
+  {
+    "id": 107,
+    "name": "Karela Capsules",
+    "composition": "Momordica Charantia",
+    "type": "Ayurvedic",
+    "indications": ["Blood Sugar Control"]
+  },
+  {
+    "id": 108,
+    "name": "Amalaki Capsules",
+    "composition": "Emblica Officinalis",
+    "type": "Ayurvedic",
+    "indications": ["Immunity", "Vitamin C"]
+  },
+  {
+    "id": 109,
+    "name": "Ashwagandha Tablets",
+    "composition": "Withania Somnifera",
+    "type": "Ayurvedic",
+    "indications": ["Stress", "Strength"]
+  },
+  {
+    "id": 110,
+    "name": "Neem Tablets",
+    "composition": "Azadirachta Indica",
+    "type": "Ayurvedic",
+    "indications": ["Skin Health"]
+  },
+  {
+    "id": 111,
+    "name": "Becosules",
+    "composition": "Vitamin B Complex",
+    "type": "Vitamin",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 112,
+    "name": "Polybion",
+    "composition": "Vitamin B Complex + B12",
+    "type": "Vitamin",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 113,
+    "name": "Celin 500",
+    "composition": "Ascorbic Acid",
+    "type": "Vitamin C",
+    "indications": ["Vitamin C Deficiency"]
+  },
+  {
+    "id": 114,
+    "name": "Ascoril",
+    "composition": "Ambroxol + Guaifenesin + Terbutaline",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 115,
+    "name": "Grilinctus",
+    "composition": "Chlorpheniramine + Codeine",
+    "type": "Cough Syrup",
+    "indications": ["Dry Cough"]
+  },
+  {
+    "id": 116,
+    "name": "Ambrolite S",
+    "composition": "Ambroxol + Salbutamol + Guaifenesin",
+    "type": "Cough Syrup",
+    "indications": ["Productive Cough"]
+  },
+  {
+    "id": 117,
+    "name": "Montair LC",
+    "composition": "Montelukast + Levocetirizine",
+    "type": "Anti-Allergic",
+    "indications": ["Allergy", "Rhinitis"]
+  },
+  {
+    "id": 118,
+    "name": "Allegra 120",
+    "composition": "Fexofenadine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 119,
+    "name": "Cetirizine 10",
+    "composition": "Cetirizine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 120,
+    "name": "Levocet 5",
+    "composition": "Levocetirizine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 121,
+    "name": "Otrivin",
+    "composition": "Xylometazoline",
+    "type": "Nasal Decongestant",
+    "indications": ["Nasal Congestion"]
+  },
+  {
+    "id": 122,
+    "name": "Nasivion",
+    "composition": "Oxymetazoline",
+    "type": "Nasal Decongestant",
+    "indications": ["Nasal Congestion"]
+  },
+  {
+    "id": 123,
+    "name": "Avil 25",
+    "composition": "Pheniramine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 124,
+    "name": "Zyrtec 10",
+    "composition": "Cetirizine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 125,
+    "name": "Benadryl Cough Formula",
+    "composition": "Diphenhydramine + Ammonium Chloride + Sodium Citrate",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 126,
+    "name": "Asthalin Inhaler",
+    "composition": "Salbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 127,
+    "name": "Seretide Accuhaler",
+    "composition": "Salmeterol + Fluticasone",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 128,
+    "name": "Foracort Inhaler",
+    "composition": "Formoterol + Budesonide",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 129,
+    "name": "Duolin Inhaler",
+    "composition": "Ipratropium + Salbutamol",
+    "type": "Bronchodilator Combo",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 130,
+    "name": "Budecort Inhaler",
+    "composition": "Budesonide",
+    "type": "Inhaled Corticosteroid",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 131,
+    "name": "Levolin Inhaler",
+    "composition": "Levosalbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 132,
+    "name": "Tiova Inhaler",
+    "composition": "Tiotropium",
+    "type": "Anticholinergic",
+    "indications": ["COPD"]
+  },
+  {
+    "id": 133,
+    "name": "Rotacaps Budesonide",
+    "composition": "Budesonide",
+    "type": "Inhaled Corticosteroid",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 134,
+    "name": "Rotacaps Foracort",
+    "composition": "Formoterol + Budesonide",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 135,
+    "name": "Althrocin 250",
+    "composition": "Erythromycin",
+    "type": "Macrolide Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 136,
+    "name": "Azithral 500",
+    "composition": "Azithromycin",
+    "type": "Macrolide Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 137,
+    "name": "Augmentin 625",
+    "composition": "Amoxicillin + Clavulanic Acid",
+    "type": "Penicillin Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 138,
+    "name": "Taxim O 200",
+    "composition": "Cefixime",
+    "type": "Cephalosporin Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 139,
+    "name": "Cefspan 200",
+    "composition": "Cefixime",
+    "type": "Cephalosporin Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 140,
+    "name": "Levoflox 500",
+    "composition": "Levofloxacin",
+    "type": "Fluoroquinolone",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 141,
+    "name": "Ciplox 500",
+    "composition": "Ciprofloxacin",
+    "type": "Fluoroquinolone",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 142,
+    "name": "Doxy 100",
+    "composition": "Doxycycline",
+    "type": "Tetracycline Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 143,
+    "name": "Vibramycin",
+    "composition": "Doxycycline",
+    "type": "Tetracycline Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 144,
+    "name": "Metrogyl 400",
+    "composition": "Metronidazole",
+    "type": "Nitroimidazole",
+    "indications": ["Anaerobic Infections"]
+  },
+  {
+    "id": 145,
+    "name": "Flagyl 400",
+    "composition": "Metronidazole",
+    "type": "Nitroimidazole",
+    "indications": ["Anaerobic Infections"]
+  },
+  {
+    "id": 146,
+    "name": "Tinidazole 500",
+    "composition": "Tinidazole",
+    "type": "Nitroimidazole",
+    "indications": ["Anaerobic Infections"]
+  },
+  {
+    "id": 147,
+    "name": "Zentel 400",
+    "composition": "Albendazole",
+    "type": "Anthelmintic",
+    "indications": ["Worm Infestation"]
+  },
+  {
+    "id": 148,
+    "name": "Mebex 100",
+    "composition": "Mebendazole",
+    "type": "Anthelmintic",
+    "indications": ["Worm Infestation"]
+  },
+  {
+    "id": 149,
+    "name": "Ovex",
+    "composition": "Mebendazole",
+    "type": "Anthelmintic",
+    "indications": ["Worm Infestation"]
+  },
+  {
+    "id": 150,
+    "name": "Albendazole 400",
+    "composition": "Albendazole",
+    "type": "Anthelmintic",
+    "indications": ["Worm Infestation"]
+  }
+]
+[
+  {
+    "id": 151,
+    "name": "Zyrlex",
+    "composition": "Levocetirizine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 152,
+    "name": "Allegra 180",
+    "composition": "Fexofenadine",
+    "type": "Antihistamine",
+    "indications": ["Allergy"]
+  },
+  {
+    "id": 153,
+    "name": "Montair 10",
+    "composition": "Montelukast",
+    "type": "Leukotriene Receptor Antagonist",
+    "indications": ["Asthma", "Allergy"]
+  },
+  {
+    "id": 154,
+    "name": "Monticope",
+    "composition": "Montelukast + Levocetirizine",
+    "type": "Anti-Allergic",
+    "indications": ["Allergy", "Rhinitis"]
+  },
+  {
+    "id": 155,
+    "name": "Telekast L",
+    "composition": "Montelukast + Levocetirizine",
+    "type": "Anti-Allergic",
+    "indications": ["Allergy", "Rhinitis"]
+  },
+  {
+    "id": 156,
+    "name": "Combiflam",
+    "composition": "Ibuprofen + Paracetamol",
+    "type": "NSAID",
+    "indications": ["Pain", "Fever"]
+  },
+  {
+    "id": 157,
+    "name": "Flexon",
+    "composition": "Ibuprofen + Paracetamol",
+    "type": "NSAID",
+    "indications": ["Pain", "Fever"]
+  },
+  {
+    "id": 158,
+    "name": "Dolo 650",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever", "Pain"]
+  },
+  {
+    "id": 159,
+    "name": "Crocin Advance",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever", "Pain"]
+  },
+  {
+    "id": 160,
+    "name": "Calpol 500",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever", "Pain"]
+  },
+  {
+    "id": 161,
+    "name": "Meftal Spas",
+    "composition": "Mefenamic Acid + Dicyclomine",
+    "type": "Antispasmodic",
+    "indications": ["Abdominal Pain", "Cramps"]
+  },
+  {
+    "id": 162,
+    "name": "Cyclopam",
+    "composition": "Dicyclomine + Paracetamol",
+    "type": "Antispasmodic",
+    "indications": ["Abdominal Pain"]
+  },
+  {
+    "id": 163,
+    "name": "Drotin DS",
+    "composition": "Drotaverine",
+    "type": "Antispasmodic",
+    "indications": ["Abdominal Pain"]
+  },
+  {
+    "id": 164,
+    "name": "Spasmonil",
+    "composition": "Hyoscine Butylbromide",
+    "type": "Antispasmodic",
+    "indications": ["Abdominal Cramps"]
+  },
+  {
+    "id": 165,
+    "name": "Rabicip",
+    "composition": "Rabeprazole",
+    "type": "PPI",
+    "indications": ["Acidity", "Ulcer"]
+  },
+  {
+    "id": 166,
+    "name": "Pan 40",
+    "composition": "Pantoprazole",
+    "type": "PPI",
+    "indications": ["Acidity", "Ulcer"]
+  },
+  {
+    "id": 167,
+    "name": "Acidil",
+    "composition": "Herbal Antacid",
+    "type": "Ayurvedic",
+    "indications": ["Acidity"]
+  },
+  {
+    "id": 168,
+    "name": "Ulgel",
+    "composition": "Aluminum Hydroxide + Magnesium Hydroxide + Simethicone",
+    "type": "Antacid",
+    "indications": ["Acidity"]
+  },
+  {
+    "id": 169,
+    "name": "Digene",
+    "composition": "Magnesium Hydroxide + Aluminum Hydroxide + Simethicone",
+    "type": "Antacid",
+    "indications": ["Acidity"]
+  },
+  {
+    "id": 170,
+    "name": "Gelusil",
+    "composition": "Magnesium Hydroxide + Aluminum Hydroxide + Simethicone",
+    "type": "Antacid",
+    "indications": ["Acidity"]
+  },
+  {
+    "id": 171,
+    "name": "Domstal",
+    "composition": "Domperidone",
+    "type": "Prokinetic",
+    "indications": ["Nausea", "Vomiting"]
+  },
+  {
+    "id": 172,
+    "name": "Emeset",
+    "composition": "Ondansetron",
+    "type": "Antiemetic",
+    "indications": ["Nausea", "Vomiting"]
+  },
+  {
+    "id": 173,
+    "name": "Ondem",
+    "composition": "Ondansetron",
+    "type": "Antiemetic",
+    "indications": ["Nausea", "Vomiting"]
+  },
+  {
+    "id": 174,
+    "name": "Vomistop",
+    "composition": "Domperidone",
+    "type": "Prokinetic",
+    "indications": ["Nausea", "Vomiting"]
+  },
+  {
+    "id": 175,
+    "name": "ORS Powder",
+    "composition": "Glucose + Electrolytes",
+    "type": "Oral Rehydration",
+    "indications": ["Dehydration"]
+  },
+  {
+    "id": 176,
+    "name": "Electral Powder",
+    "composition": "Glucose + Sodium Chloride + Potassium Chloride + Sodium Citrate",
+    "type": "Oral Rehydration",
+    "indications": ["Dehydration"]
+  },
+  {
+    "id": 177,
+    "name": "Eldoper",
+    "composition": "Loperamide",
+    "type": "Antidiarrheal",
+    "indications": ["Diarrhea"]
+  },
+  {
+    "id": 178,
+    "name": "Racecadotril",
+    "composition": "Racecadotril",
+    "type": "Antidiarrheal",
+    "indications": ["Diarrhea"]
+  },
+  {
+    "id": 179,
+    "name": "Metrogyl",
+    "composition": "Metronidazole",
+    "type": "Antiprotozoal",
+    "indications": ["Diarrhea", "Amoebiasis"]
+  },
+  {
+    "id": 180,
+    "name": "Secnidazole",
+    "composition": "Secnidazole",
+    "type": "Antiprotozoal",
+    "indications": ["Amoebiasis"]
+  },
+  {
+    "id": 181,
+    "name": "Flagyl",
+    "composition": "Metronidazole",
+    "type": "Antiprotozoal",
+    "indications": ["Amoebiasis"]
+  },
+  {
+    "id": 182,
+    "name": "Spirulina Capsules",
+    "composition": "Spirulina",
+    "type": "Nutritional Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 183,
+    "name": "Nutrilite Daily",
+    "composition": "Multivitamin + Multimineral",
+    "type": "Nutritional Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 184,
+    "name": "Supradyn",
+    "composition": "Multivitamin + Multimineral",
+    "type": "Nutritional Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 185,
+    "name": "Revital H",
+    "composition": "Ginseng + Multivitamin + Minerals",
+    "type": "Nutritional Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 186,
+    "name": "Seven Seas",
+    "composition": "Cod Liver Oil",
+    "type": "Nutritional Supplement",
+    "indications": ["General Health"]
+  },
+  {
+    "id": 187,
+    "name": "Calcimax",
+    "composition": "Calcium + Vitamin D3 + Magnesium + Zinc",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 188,
+    "name": "Caldikind",
+    "composition": "Calcium + Vitamin D3",
+    "type": "Supplement",
+    "indications": ["Bone Health"]
+  },
+  {
+    "id": 189,
+    "name": "Uprise D3",
+    "composition": "Cholecalciferol (Vitamin D3)",
+    "type": "Supplement",
+    "indications": ["Vitamin D Deficiency"]
+  },
+  {
+    "id": 190,
+    "name": "Depura",
+    "composition": "Cholecalciferol (Vitamin D3)",
+    "type": "Supplement",
+    "indications": ["Vitamin D Deficiency"]
+  },
+  {
+    "id": 191,
+    "name": "Evion 400",
+    "composition": "Vitamin E",
+    "type": "Supplement",
+    "indications": ["Antioxidant"]
+  },
+  {
+    "id": 192,
+    "name": "Neurobion Forte",
+    "composition": "Vitamin B1 + B6 + B12",
+    "type": "Vitamin",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 193,
+    "name": "Methylcobalamin",
+    "composition": "Vitamin B12",
+    "type": "Vitamin",
+    "indications": ["B12 Deficiency"]
+  },
+  {
+    "id": 194,
+    "name": "Nurokind Plus",
+    "composition": "Methylcobalamin + Folic Acid + Pyridoxine",
+    "type": "Vitamin",
+    "indications": ["Neuropathy"]
+  },
+  {
+    "id": 195,
+    "name": "Folvite",
+    "composition": "Folic Acid",
+    "type": "Vitamin",
+    "indications": ["Anemia", "Pregnancy"]
+  },
+  {
+    "id": 196,
+    "name": "Thyronorm 50",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 197,
+    "name": "Eltroxin 50",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 198,
+    "name": "Thyrox 50",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 199,
+    "name": "Thyronorm 100",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 200,
+    "name": "Eltroxin 100",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 201,
+    "name": "Thyrox 100",
+    "composition": "Levothyroxine",
+    "type": "Thyroid Hormone",
+    "indications": ["Hypothyroidism"]
+  },
+  {
+    "id": 202,
+    "name": "Neomercazole 5",
+    "composition": "Carbimazole",
+    "type": "Antithyroid",
+    "indications": ["Hyperthyroidism"]
+  },
+  {
+    "id": 203,
+    "name": "Neomercazole 10",
+    "composition": "Carbimazole",
+    "type": "Antithyroid",
+    "indications": ["Hyperthyroidism"]
+  },
+  {
+    "id": 204,
+    "name": "Cipladine Ointment",
+    "composition": "Povidone Iodine",
+    "type": "Antiseptic",
+    "indications": ["Wound Care"]
+  },
+  {
+    "id": 205,
+    "name": "Neosporin Cream",
+    "composition": "Neomycin + Bacitracin",
+    "type": "Topical Antibiotic",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 206,
+    "name": "T Bact Ointment",
+    "composition": "Mupirocin",
+    "type": "Topical Antibiotic",
+    "indications": ["Skin Infections"]
+  },
+  {
+    "id": 207,
+    "name": "Betadine Solution",
+    "composition": "Povidone Iodine",
+    "type": "Antiseptic",
+    "indications": ["Wound Care"]
+  },
+  {
+    "id": 208,
+    "name": "Himalaya Antiseptic Cream",
+    "composition": "Herbal Extracts",
+    "type": "Ayurvedic",
+    "indications": ["Minor Cuts", "Wounds"]
+  },
+  {
+    "id": 209,
+    "name": "Boroline",
+    "composition": "Antiseptic Ayurvedic Cream",
+    "type": "Ayurvedic",
+    "indications": ["Cuts", "Dry Skin"]
+  },
+  {
+    "id": 210,
+    "name": "Himani Fast Relief",
+    "composition": "Herbal Formulation",
+    "type": "Pain Balm",
+    "indications": ["Muscle Pain", "Joint Pain"]
+  }[
+  {
+    "id": 211,
+    "name": "Volini Spray",
+    "composition": "Diclofenac + Methyl Salicylate + Menthol + Linseed Oil",
+    "type": "Topical Analgesic",
+    "indications": ["Muscle Pain", "Joint Pain"]
+  },
+  {
+    "id": 212,
+    "name": "Moov Cream",
+    "composition": "Diclofenac + Methyl Salicylate + Menthol",
+    "type": "Topical Analgesic",
+    "indications": ["Back Pain", "Joint Pain"]
+  },
+  {
+    "id": 213,
+    "name": "Iodex Balm",
+    "composition": "Herbal Oils + Camphor",
+    "type": "Pain Balm",
+    "indications": ["Muscle Pain", "Joint Pain"]
+  },
+  {
+    "id": 214,
+    "name": "Relispray",
+    "composition": "Herbal Oils + Menthol",
+    "type": "Pain Relief Spray",
+    "indications": ["Muscle Pain"]
+  },
+  {
+    "id": 215,
+    "name": "Amoxycillin 500",
+    "composition": "Amoxycillin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 216,
+    "name": "Augmentin 625",
+    "composition": "Amoxycillin + Clavulanic Acid",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 217,
+    "name": "Cefixime 200",
+    "composition": "Cefixime",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 218,
+    "name": "Azithral 500",
+    "composition": "Azithromycin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 219,
+    "name": "Levoflox 500",
+    "composition": "Levofloxacin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 220,
+    "name": "Ciplox 500",
+    "composition": "Ciprofloxacin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 221,
+    "name": "Taxim O 200",
+    "composition": "Cefixime",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 222,
+    "name": "Metrogyl 400",
+    "composition": "Metronidazole",
+    "type": "Antiprotozoal",
+    "indications": ["Amoebiasis"]
+  },
+  {
+    "id": 223,
+    "name": "Oflox 200",
+    "composition": "Ofloxacin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 224,
+    "name": "Doxy 100",
+    "composition": "Doxycycline",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 225,
+    "name": "Minocycline 100",
+    "composition": "Minocycline",
+    "type": "Antibiotic",
+    "indications": ["Acne", "Infections"]
+  },
+  {
+    "id": 226,
+    "name": "Clindamycin 300",
+    "composition": "Clindamycin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infection"]
+  },
+  {
+    "id": 227,
+    "name": "Linid 600",
+    "composition": "Linezolid",
+    "type": "Antibiotic",
+    "indications": ["Serious Infections"]
+  },
+  {
+    "id": 228,
+    "name": "Meronem 1g",
+    "composition": "Meropenem",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 229,
+    "name": "Imipenem+Cilastatin",
+    "composition": "Imipenem + Cilastatin",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 230,
+    "name": "Amikacin 500",
+    "composition": "Amikacin",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 231,
+    "name": "Gentamicin 80",
+    "composition": "Gentamicin",
+    "type": "Antibiotic",
+    "indications": ["Bacterial Infections"]
+  },
+  {
+    "id": 232,
+    "name": "Ceftriaxone 1g",
+    "composition": "Ceftriaxone",
+    "type": "Antibiotic",
+    "indications": ["Serious Infections"]
+  },
+  {
+    "id": 233,
+    "name": "Cefotaxime 1g",
+    "composition": "Cefotaxime",
+    "type": "Antibiotic",
+    "indications": ["Serious Infections"]
+  },
+  {
+    "id": 234,
+    "name": "Piperacillin+Tazobactam",
+    "composition": "Piperacillin + Tazobactam",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 235,
+    "name": "Cefoperazone+Sulbactam",
+    "composition": "Cefoperazone + Sulbactam",
+    "type": "Antibiotic",
+    "indications": ["Severe Infections"]
+  },
+  {
+    "id": 236,
+    "name": "Augmentin Syrup",
+    "composition": "Amoxycillin + Clavulanic Acid",
+    "type": "Antibiotic",
+    "indications": ["Pediatric Infection"]
+  },
+  {
+    "id": 237,
+    "name": "Azithral Syrup",
+    "composition": "Azithromycin",
+    "type": "Antibiotic",
+    "indications": ["Pediatric Infection"]
+  },
+  {
+    "id": 238,
+    "name": "Crocin Drops",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever"]
+  },
+  {
+    "id": 239,
+    "name": "Calpol Drops",
+    "composition": "Paracetamol",
+    "type": "Antipyretic",
+    "indications": ["Fever"]
+  },
+  {
+    "id": 240,
+    "name": "Ibugesic Plus",
+    "composition": "Ibuprofen + Paracetamol",
+    "type": "NSAID",
+    "indications": ["Pain", "Fever"]
+  },
+  {
+    "id": 241,
+    "name": "Maxtra Syrup",
+    "composition": "Chlorpheniramine + Phenylephrine + Paracetamol",
+    "type": "Cold Syrup",
+    "indications": ["Cold", "Allergy"]
+  },
+  {
+    "id": 242,
+    "name": "Ascoril Expectorant",
+    "composition": "Ambroxol + Guaiphenesin + Levosalbutamol",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 243,
+    "name": "Grilinctus BM",
+    "composition": "Ambroxol + Guaiphenesin + Terbutaline",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 244,
+    "name": "Grilinctus Syrup",
+    "composition": "Chlorpheniramine + Codeine",
+    "type": "Cough Syrup",
+    "indications": ["Dry Cough"]
+  },
+  {
+    "id": 245,
+    "name": "Benadryl Syrup",
+    "composition": "Diphenhydramine + Ammonium Chloride + Sodium Citrate",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 246,
+    "name": "Ambrodil Syrup",
+    "composition": "Ambroxol",
+    "type": "Mucolytic",
+    "indications": ["Productive Cough"]
+  },
+  {
+    "id": 247,
+    "name": "Ambrolite Syrup",
+    "composition": "Ambroxol + Guaiphenesin + Levosalbutamol",
+    "type": "Cough Syrup",
+    "indications": ["Cough"]
+  },
+  {
+    "id": 248,
+    "name": "Levolin Inhaler",
+    "composition": "Levosalbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 249,
+    "name": "Seroflo Inhaler",
+    "composition": "Fluticasone + Salmeterol",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 250,
+    "name": "Budecort Inhaler",
+    "composition": "Budesonide",
+    "type": "Inhaled Corticosteroid",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 251,
+    "name": "Foracort Inhaler",
+    "composition": "Formoterol + Budesonide",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 252,
+    "name": "Tiova Inhaler",
+    "composition": "Tiotropium",
+    "type": "Anticholinergic",
+    "indications": ["COPD"]
+  },
+  {
+    "id": 253,
+    "name": "Deriphyllin Retard",
+    "composition": "Etofylline + Theophylline",
+    "type": "Bronchodilator",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 254,
+    "name": "Duolin Inhaler",
+    "composition": "Ipratropium + Levosalbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 255,
+    "name": "Salbutamol Inhaler",
+    "composition": "Salbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 256,
+    "name": "Asthalin Inhaler",
+    "composition": "Salbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 257,
+    "name": "Seretide Accuhaler",
+    "composition": "Fluticasone + Salmeterol",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 258,
+    "name": "Budamate Inhaler",
+    "composition": "Formoterol + Budesonide",
+    "type": "Inhaled Corticosteroid + LABA",
+    "indications": ["Asthma", "COPD"]
+  },
+  {
+    "id": 259,
+    "name": "Aerocort Inhaler",
+    "composition": "Beclomethasone + Levosalbutamol",
+    "type": "Inhaled Corticosteroid + Bronchodilator",
+    "indications": ["Asthma"]
+  },
+  {
+    "id": 260,
+    "name": "Combimist L Inhaler",
+    "composition": "Ipratropium + Levosalbutamol",
+    "type": "Bronchodilator",
+    "indications": ["Asthma", "COPD"]
+  }
+][
+  {
+    "id": 261,
+    "name": "Amlodipine 5mg",
+    "composition": "Amlodipine",
+    "type": "Calcium Channel Blocker",
+    "indications": ["Hypertension", "CKD with hypertension"]
+  },
+  {
+    "id": 262,
+    "name": "Telmisartan 40mg",
+    "composition": "Telmisartan",
+    "type": "ARB",
+    "indications": ["Hypertension", "CKD with proteinuria"]
+  },
+  {
+    "id": 263,
+    "name": "Losartan 50mg",
+    "composition": "Losartan",
+    "type": "ARB",
+    "indications": ["Hypertension", "Diabetic nephropathy"]
+  },
+  {
+    "id": 264,
+    "name": "Ramipril 5mg",
+    "composition": "Ramipril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension", "Proteinuric CKD"]
+  },
+  {
+    "id": 265,
+    "name": "Perindopril 4mg",
+    "composition": "Perindopril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension", "CKD with proteinuria"]
+  },
+  {
+    "id": 266,
+    "name": "Furosemide 40mg",
+    "composition": "Furosemide",
+    "type": "Loop Diuretic",
+    "indications": ["Fluid Overload", "CKD edema"]
+  },
+  {
+    "id": 267,
+    "name": "Torasemide 10mg",
+    "composition": "Torasemide",
+    "type": "Loop Diuretic",
+    "indications": ["Edema", "Heart Failure", "CKD"]
+  },
+  {
+    "id": 268,
+    "name": "Spironolactone 25mg",
+    "composition": "Spironolactone",
+    "type": "Potassium-Sparing Diuretic",
+    "indications": ["Heart Failure", "CKD with fluid overload"]
+  },
+  {
+    "id": 269,
+    "name": "Hydrochlorothiazide 12.5mg",
+    "composition": "Hydrochlorothiazide",
+    "type": "Thiazide Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 270,
+    "name": "Chlorthalidone 12.5mg",
+    "composition": "Chlorthalidone",
+    "type": "Thiazide-like Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 271,
+    "name": "Metformin 500mg",
+    "composition": "Metformin",
+    "type": "Biguanide",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 272,
+    "name": "Glimepiride 2mg",
+    "composition": "Glimepiride",
+    "type": "Sulfonylurea",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 273,
+    "name": "Vildagliptin 50mg",
+    "composition": "Vildagliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 274,
+    "name": "Linagliptin 5mg",
+    "composition": "Linagliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 275,
+    "name": "Empagliflozin 10mg",
+    "composition": "Empagliflozin",
+    "type": "SGLT2 Inhibitor",
+    "indications": ["Type 2 Diabetes", "CKD Protection"]
+  },
+  {
+    "id": 276,
+    "name": "Dapagliflozin 10mg",
+    "composition": "Dapagliflozin",
+    "type": "SGLT2 Inhibitor",
+    "indications": ["Type 2 Diabetes", "CKD Protection"]
+  },
+  {
+    "id": 277,
+    "name": "Insulin Glargine",
+    "composition": "Insulin Glargine",
+    "type": "Basal Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 278,
+    "name": "Insulin Aspart",
+    "composition": "Insulin Aspart",
+    "type": "Rapid-acting Insulin",
+    "indications": ["Diabetes"]
+  },
+  {
+    "id": 279,
+    "name": "Sodium Bicarbonate Tabs",
+    "composition": "Sodium Bicarbonate",
+    "type": "Alkali Therapy",
+    "indications": ["Metabolic Acidosis in CKD"]
+  },
+  {
+    "id": 280,
+    "name": "Sevelamer 400mg",
+    "composition": "Sevelamer Carbonate",
+    "type": "Phosphate Binder",
+    "indications": ["Hyperphosphatemia in CKD"]
+  },
+  {
+    "id": 281,
+    "name": "Calcium Acetate 667mg",
+    "composition": "Calcium Acetate",
+    "type": "Phosphate Binder",
+    "indications": ["Hyperphosphatemia in CKD"]
+  },
+  {
+    "id": 282,
+    "name": "Alfacalcidol 0.25mcg",
+    "composition": "Alfacalcidol",
+    "type": "Vitamin D Analog",
+    "indications": ["Secondary Hyperparathyroidism in CKD"]
+  },
+  {
+    "id": 283,
+    "name": "Calcitriol 0.25mcg",
+    "composition": "Calcitriol",
+    "type": "Active Vitamin D",
+    "indications": ["Secondary Hyperparathyroidism in CKD"]
+  },
+  {
+    "id": 284,
+    "name": "Calcium Carbonate 500mg",
+    "composition": "Calcium Carbonate",
+    "type": "Calcium Supplement",
+    "indications": ["Hypocalcemia in CKD"]
+  },
+  {
+    "id": 285,
+    "name": "Ferric Carboxymaltose Injection",
+    "composition": "Ferric Carboxymaltose",
+    "type": "IV Iron",
+    "indications": ["CKD Anemia"]
+  },
+  {
+    "id": 286,
+    "name": "Iron Sucrose Injection",
+    "composition": "Iron Sucrose",
+    "type": "IV Iron",
+    "indications": ["CKD Anemia"]
+  },
+  {
+    "id": 287,
+    "name": "Folic Acid 5mg",
+    "composition": "Folic Acid",
+    "type": "Vitamin Supplement",
+    "indications": ["CKD Anemia"]
+  },
+  {
+    "id": 288,
+    "name": "Erythropoietin Injection",
+    "composition": "Epoetin Alfa",
+    "type": "ESA",
+    "indications": ["CKD Anemia"]
+  },
+  {
+    "id": 289,
+    "name": "Darbepoetin Alfa Injection",
+    "composition": "Darbepoetin Alfa",
+    "type": "ESA",
+    "indications": ["CKD Anemia"]
+  },
+  {
+    "id": 290,
+    "name": "Allopurinol 100mg",
+    "composition": "Allopurinol",
+    "type": "Xanthine Oxidase Inhibitor",
+    "indications": ["Hyperuricemia in CKD"]
+  },
+  {
+    "id": 291,
+    "name": "Febuxostat 40mg",
+    "composition": "Febuxostat",
+    "type": "Xanthine Oxidase Inhibitor",
+    "indications": ["Hyperuricemia in CKD"]
+  },
+  {
+    "id": 292,
+    "name": "Sodium Chloride Tablets",
+    "composition": "Sodium Chloride",
+    "type": "Electrolyte Supplement",
+    "indications": ["Hyponatremia"]
+  },
+  {
+    "id": 293,
+    "name": "Potassium Chloride Solution",
+    "composition": "Potassium Chloride",
+    "type": "Electrolyte Supplement",
+    "indications": ["Hypokalemia"]
+  },
+  {
+    "id": 294,
+    "name": "Kayexalate Powder",
+    "composition": "Sodium Polystyrene Sulfonate",
+    "type": "Potassium Binder",
+    "indications": ["Hyperkalemia"]
+  },
+  {
+    "id": 295,
+    "name": "Sodium Zirconium Cyclosilicate",
+    "composition": "SZC",
+    "type": "Potassium Binder",
+    "indications": ["Hyperkalemia"]
+  },
+  {
+    "id": 296,
+    "name": "Cinacalcet 30mg",
+    "composition": "Cinacalcet",
+    "type": "Calcimimetic",
+    "indications": ["Secondary Hyperparathyroidism in CKD"]
+  },
+  {
+    "id": 297,
+    "name": "Rosuvastatin 10mg",
+    "composition": "Rosuvastatin",
+    "type": "Statin",
+    "indications": ["Dyslipidemia in CKD"]
+  },
+  {
+    "id": 298,
+    "name": "Atorvastatin 20mg",
+    "composition": "Atorvastatin",
+    "type": "Statin",
+    "indications": ["Dyslipidemia"]
+  },
+  {
+    "id": 299,
+    "name": "Fenofibrate 145mg",
+    "composition": "Fenofibrate",
+    "type": "Fibrate",
+    "indications": ["Hypertriglyceridemia"]
+  },
+  {
+    "id": 300,
+    "name": "Clopidogrel 75mg",
+    "composition": "Clopidogrel",
+    "type": "Antiplatelet",
+    "indications": ["CKD with cardiovascular risk"]
+  }
+][
+  {
+    "id": 301,
+    "name": "Nebivolol 5mg",
+    "composition": "Nebivolol",
+    "type": "Beta-Blocker",
+    "indications": ["Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 302,
+    "name": "Bisoprolol 5mg",
+    "composition": "Bisoprolol",
+    "type": "Beta-Blocker",
+    "indications": ["Heart Failure", "Hypertension"]
+  },
+  {
+    "id": 303,
+    "name": "Carvedilol 6.25mg",
+    "composition": "Carvedilol",
+    "type": "Beta-Blocker",
+    "indications": ["Heart Failure", "Hypertension"]
+  },
+  {
+    "id": 304,
+    "name": "Olmesartan 20mg",
+    "composition": "Olmesartan",
+    "type": "ARB",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 305,
+    "name": "Valsartan 80mg",
+    "composition": "Valsartan",
+    "type": "ARB",
+    "indications": ["Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 306,
+    "name": "Enalapril 5mg",
+    "composition": "Enalapril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 307,
+    "name": "Lisinopril 10mg",
+    "composition": "Lisinopril",
+    "type": "ACE Inhibitor",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 308,
+    "name": "Hydralazine 25mg",
+    "composition": "Hydralazine",
+    "type": "Vasodilator",
+    "indications": ["Resistant Hypertension", "Heart Failure"]
+  },
+  {
+    "id": 309,
+    "name": "Minoxidil 5mg (Oral)",
+    "composition": "Minoxidil",
+    "type": "Vasodilator",
+    "indications": ["Resistant Hypertension"]
+  },
+  {
+    "id": 310,
+    "name": "Indapamide 1.5mg SR",
+    "composition": "Indapamide",
+    "type": "Thiazide-like Diuretic",
+    "indications": ["Hypertension"]
+  },
+  {
+    "id": 311,
+    "name": "Metolazone 2.5mg",
+    "composition": "Metolazone",
+    "type": "Thiazide-like Diuretic",
+    "indications": ["Resistant Edema", "CKD Edema"]
+  },
+  {
+    "id": 312,
+    "name": "Empagliflozin+Metformin 12.5/1000mg",
+    "composition": "Empagliflozin + Metformin",
+    "type": "SGLT2 Inhibitor Combo",
+    "indications": ["Type 2 Diabetes", "CKD Protection"]
+  },
+  {
+    "id": 313,
+    "name": "Sitagliptin 100mg",
+    "composition": "Sitagliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 314,
+    "name": "Teneligliptin 20mg",
+    "composition": "Teneligliptin",
+    "type": "DPP-4 Inhibitor",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 315,
+    "name": "Glargine + Lixisenatide",
+    "composition": "Insulin Glargine + Lixisenatide",
+    "type": "Basal Insulin + GLP-1",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 316,
+    "name": "Liraglutide 6mg/ml Injection",
+    "composition": "Liraglutide",
+    "type": "GLP-1 Analog",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 317,
+    "name": "Dulaglutide 1.5mg Injection",
+    "composition": "Dulaglutide",
+    "type": "GLP-1 Analog",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 318,
+    "name": "Pioglitazone 15mg",
+    "composition": "Pioglitazone",
+    "type": "Thiazolidinedione",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 319,
+    "name": "Repaglinide 0.5mg",
+    "composition": "Repaglinide",
+    "type": "Meglitinide",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 320,
+    "name": "Glipizide 5mg",
+    "composition": "Glipizide",
+    "type": "Sulfonylurea",
+    "indications": ["Type 2 Diabetes"]
+  },
+  {
+    "id": 321,
+    "name": "Canagliflozin 100mg",
+    "composition": "Canagliflozin",
+    "type": "SGLT2 Inhibitor",
+    "indications": ["Type 2 Diabetes", "CKD Protection"]
+  },
+  {
+    "id": 322,
+    "name": "Lanthanum Carbonate 500mg",
+    "composition": "Lanthanum Carbonate",
+    "type": "Phosphate Binder",
+    "indications": ["Hyperphosphatemia in CKD"]
+  },
+  {
+    "id": 323,
+    "name": "Paricalcitol 1mcg",
+    "composition": "Paricalcitol",
+    "type": "Vitamin D Analog",
+    "indications": ["Secondary Hyperparathyroidism in CKD"]
+  },
+  {
+    "id": 324,
+    "name": "Ergocalciferol 60000IU",
+    "composition": "Ergocalciferol",
+    "type": "Vitamin D Supplement",
+    "indications": ["Vitamin D Deficiency"]
+  },
+  {
+    "id": 325,
+    "name": "Magnesium Hydroxide 400mg",
+    "composition": "Magnesium Hydroxide",
+    "type": "Antacid/Laxative",
+    "indications": ["CKD Constipation Management"]
+  },
+  {
+    "id": 326,
+    "name": "Polystyrene Sulfonate 15g",
+    "composition": "Sodium Polystyrene Sulfonate",
+    "type": "Potassium Binder",
+    "indications": ["Hyperkalemia"]
+  },
+  {
+    "id": 327,
+    "name": "Sodium Citrate Syrup",
+    "composition": "Sodium Citrate",
+    "type": "Urinary Alkalinizer",
+    "indications": ["Urinary Acidification"]
+  },
+  {
+    "id": 328,
+    "name": "Potassium Citrate 10mEq",
+    "composition": "Potassium Citrate",
+    "type": "Urinary Alkalinizer",
+    "indications": ["Recurrent Kidney Stones"]
+  },
+  {
+    "id": 329,
+    "name": "Tamsulosin 0.4mg",
+    "composition": "Tamsulosin",
+    "type": "Alpha-Blocker",
+    "indications": ["BPH", "CKD with LUTS"]
+  },
+  {
+    "id": 330,
+    "name": "Doxazosin 2mg",
+    "composition": "Doxazosin",
+    "type": "Alpha-Blocker",
+    "indications": ["Hypertension", "BPH"]
+  },
+  {
+    "id": 331,
+    "name": "Finasteride 5mg",
+    "composition": "Finasteride",
+    "type": "5-Alpha Reductase Inhibitor",
+    "indications": ["BPH"]
+  },
+  {
+    "id": 332,
+    "name": "Desmopressin 0.1mg",
+    "composition": "Desmopressin",
+    "type": "Vasopressin Analog",
+    "indications": ["Nocturnal Polyuria", "Diabetes Insipidus"]
+  },
+  {
+    "id": 333,
+    "name": "Aluminium Hydroxide Gel",
+    "composition": "Aluminium Hydroxide",
+    "type": "Phosphate Binder",
+    "indications": ["Hyperphosphatemia in CKD"]
+  },
+  {
+    "id": 334,
+    "name": "Acetazolamide 250mg",
+    "composition": "Acetazolamide",
+    "type": "Carbonic Anhydrase Inhibitor",
+    "indications": ["Metabolic Alkalosis", "Altitude Sickness"]
+  },
+  {
+    "id": 335,
+    "name": "Moxonidine 0.2mg",
+    "composition": "Moxonidine",
+    "type": "Central Alpha-Agonist",
+    "indications": ["Resistant Hypertension"]
+  },
+  {
+    "id": 336,
+    "name": "Clonidine 0.1mg",
+    "composition": "Clonidine",
+    "type": "Central Alpha-Agonist",
+    "indications": ["Resistant Hypertension"]
+  },
+  {
+    "id": 337,
+    "name": "Ivabradine 5mg",
+    "composition": "Ivabradine",
+    "type": "Heart Rate Reducer",
+    "indications": ["Heart Failure"]
+  },
+  {
+    "id": 338,
+    "name": "Sacubitril Valsartan 50mg",
+    "composition": "Sacubitril + Valsartan",
+    "type": "ARNI",
+    "indications": ["Heart Failure with reduced EF"]
+  },
+  {
+    "id": 339,
+    "name": "Nitroglycerin 2.6mg",
+    "composition": "Nitroglycerin",
+    "type": "Nitrate",
+    "indications": ["Angina", "Heart Failure"]
+  },
+  {
+    "id": 340,
+    "name": "Isosorbide Mononitrate 20mg",
+    "composition": "Isosorbide Mononitrate",
+    "type": "Nitrate",
+    "indications": ["Angina"]
+  }
+]
+
+
+
+]
+
