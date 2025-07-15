@@ -297,7 +297,10 @@
 </div>
 
   <script>
-   
+   let visits = JSON.parse(localStorage.getItem('visits')) || [];
+renderVisitList();
+let serialCounter = parseInt(localStorage.getItem('visitSerialCounter')) || 1;
+
     document.addEventListener('DOMContentLoaded', () => {
   // Accordion Toggle - keep this!
   const buttons = document.querySelectorAll('.accordion-button');
@@ -321,39 +324,55 @@
   // Save button listener
   saveButton.addEventListener('click', () => {
     const visitData = collectVisitData();
-    visits.push(visitData);
-    localStorage.setItem('visits', JSON.stringify(visits));
-    renderVisitList();
-    alert('Visit saved!');
+  visits.push(visitData);
+serialCounter++;
+localStorage.setItem('visitSerialCounter', serialCounter);
+localStorage.setItem('visits', JSON.stringify(visits));
+renderVisitList();
+alert('Visit saved!');
+
   });
 
-  function collectVisitData() {
-    const profileForm = document.getElementById('patient-profile-form');
-    const medicalForm = document.getElementById('medical-history-form');
-    const symptomsForm = document.getElementById('symptoms-form');
-    const vitalsForm = document.getElementById('vital-signs-form');
-    const bloodForm = document.getElementById('blood-tests-form');
-    const urineForm = document.getElementById('urine-tests-form');
-    const ultrasoundForm = document.getElementById('ultrasound-report-form');
-    const prescriptionForm = document.getElementById('prescription-form');
-    const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
-    const patientDiagnosis = document.getElementById('patient-diagnosis').value;
+ function collectVisitData() {
+  const profileForm = document.getElementById('patient-profile-form');
+  const medicalForm = document.getElementById('medical-history-form');
+  const symptomsForm = document.getElementById('symptoms-form');
+  const vitalsForm = document.getElementById('vital-signs-form');
+  const bloodForm = document.getElementById('blood-tests-form');
+  const urineForm = document.getElementById('urine-tests-form');
+  const ultrasoundForm = document.getElementById('ultrasound-report-form');
+  const prescriptionForm = document.getElementById('prescription-form');
+  const doctorDiagnosis = document.getElementById('doctor-diagnosis').value;
+  const patientDiagnosis = document.getElementById('patient-diagnosis').value;
 
-    return {
-      profile: Object.fromEntries(new FormData(profileForm)),
-      medical: Object.fromEntries(new FormData(medicalForm)),
-      symptoms: Object.fromEntries(new FormData(symptomsForm)),
-      vitals: Object.fromEntries(new FormData(vitalsForm)),
-      blood: Object.fromEntries(new FormData(bloodForm)),
-      urine: Object.fromEntries(new FormData(urineForm)),
-      ultrasound: Object.fromEntries(new FormData(ultrasoundForm)),
-      prescription: Object.fromEntries(new FormData(prescriptionForm)),
-      diagnosis: {
-        doctor: doctorDiagnosis,
-        patient: patientDiagnosis
-      }
-    };
-  }
+  // ✅ Generate unique ID in DDMMYY-0001 format
+  const today = new Date();
+  const day = String(today.getDate()).padStart(2, '0');
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const year = String(today.getFullYear()).slice(-2);
+  const datePart = `${day}${month}${year}`;
+  const serialNumber = String(serialCounter).padStart(4, '0');
+  const visitId = `${datePart}-${serialNumber}`;
+
+  return {
+    id: visitId,
+    date: datePart,
+    serial: serialNumber,
+    profile: Object.fromEntries(new FormData(profileForm)),
+    medical: Object.fromEntries(new FormData(medicalForm)),
+    symptoms: Object.fromEntries(new FormData(symptomsForm)),
+    vitals: Object.fromEntries(new FormData(vitalsForm)),
+    blood: Object.fromEntries(new FormData(bloodForm)),
+    urine: Object.fromEntries(new FormData(urineForm)),
+    ultrasound: Object.fromEntries(new FormData(ultrasoundForm)),
+    prescription: Object.fromEntries(new FormData(prescriptionForm)),
+    diagnosis: {
+      doctor: doctorDiagnosis,
+      patient: patientDiagnosis
+    }
+  };
+}
+
 function renderFields(data) {
   return Object.entries(data)
     .map(([key, value]) => `<li><strong>${key}:</strong> ${value ? value : 'Not provided'}</li>`)
@@ -371,7 +390,8 @@ function renderVisitList() {
 
     // Visit label (clickable)
     const label = document.createElement('span');
-    label.textContent = `Visit ${index + 1}`;
+    label.textContent = visit.id || `Visit ${index + 1}`;
+
     label.style.cursor = 'pointer';
     label.style.marginRight = '1rem';
     label.addEventListener('click', () => {
@@ -407,6 +427,7 @@ function renderVisitList() {
   
   function displayVisitDetails(visit) {
   visitDetails.innerHTML = `
+  <h4>🆔 Visit ID: ${visit.id}</h4>
     <h4>🧾 Patient Profile</h4>
     <ul>
       ${renderFields(visit.profile)}
