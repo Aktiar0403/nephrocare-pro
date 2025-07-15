@@ -132,6 +132,44 @@
     </select>
   </form>
 </div>
+<!-- Blood Tests Accordion -->
+<button class="accordion-button">Blood Tests</button>
+<div class="accordion-content">
+  <form id="blood-tests-form">
+    <label for="creatinine">Creatinine (mg/dL):</label>
+    <input type="number" step="0.01" id="creatinine" name="creatinine">
+
+    <label for="egfr">eGFR (mL/min):</label>
+    <input type="number" id="egfr" name="egfr">
+
+    <label for="urea">Urea (mg/dL):</label>
+    <input type="number" id="urea" name="urea">
+
+    <label for="potassium">Potassium (mEq/L):</label>
+    <input type="number" step="0.01" id="potassium" name="potassium">
+
+    <label for="sodium">Sodium (mEq/L):</label>
+    <input type="number" id="sodium" name="sodium">
+
+    <label for="calcium">Calcium (mg/dL):</label>
+    <input type="number" step="0.01" id="calcium" name="calcium">
+
+    <label for="phosphate">Phosphate (mg/dL):</label>
+    <input type="number" step="0.01" id="phosphate" name="phosphate">
+
+    <label for="bicarbonate">Bicarbonate (mEq/L):</label>
+    <input type="number" step="0.1" id="bicarbonate" name="bicarbonate">
+
+    <label for="hemoglobin">Hemoglobin (g/dL):</label>
+    <input type="number" step="0.1" id="hemoglobin" name="hemoglobin">
+
+    <label for="albumin">Albumin (g/dL):</label>
+    <input type="number" step="0.1" id="albumin" name="albumin">
+
+    <label for="pth">PTH (pg/mL):</label>
+    <input type="number" id="pth" name="pth">
+  </form>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
