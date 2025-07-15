@@ -374,22 +374,28 @@ function displayVisitDetails(visit) {
   </ul>
 </section>
 
-    <section>
-      <h4>🩹 Symptoms</h4>
-      <ul>
-        ${Object.entries(visit.symptoms).filter(([k,v]) => v).map(([key]) => `<li>${key}</li>`).join('') || '<li>None reported</li>'}
-      </ul>
-    </section>
+<section>
+  <h4>🩹 Symptoms</h4>
+  <ul>
+    ${
+      Object.entries(visit.symptoms)
+        .filter(([_, value]) => value)
+        .map(([key]) => `<li>${key.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}</li>`)
+        .join('') || '<li>None reported</li>'
+    }
+  </ul>
+</section>
 
-    <section>
-      <h4>🩸 Vital Signs</h4>
-      <ul>
-        <li>SBP: ${visit.vitalSigns.sbp} mmHg</li>
-        <li>DBP: ${visit.vitalSigns.dbp} mmHg</li>
-        <li>Weight: ${visit.vitalSigns.weight} kg</li>
-        <li>Volume Status: ${visit.vitalSigns.volumeStatus}</li>
-      </ul>
-    </section>
+   <section>
+  <h4>🩸 Vital Signs</h4>
+  <ul>
+    ${visit.vitalSigns.sbp ? `<li>SBP: ${visit.vitalSigns.sbp} mmHg</li>` : ''}
+    ${visit.vitalSigns.dbp ? `<li>DBP: ${visit.vitalSigns.dbp} mmHg</li>` : ''}
+    ${visit.vitalSigns.weight ? `<li>Weight: ${visit.vitalSigns.weight} kg</li>` : ''}
+    ${visit.vitalSigns.volumeStatus ? `<li>Volume Status: ${visit.vitalSigns.volumeStatus}</li>` : ''}
+  </ul>
+</section>
+
 
     <section>
       <h4>🧪 Blood Tests</h4>
