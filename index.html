@@ -64,3 +64,17 @@
     <form id="medical-history-form">
       <label><input type="checkbox" id="diabetes" name="diabetes"> Diabetes</label>
       <input type="number" id="diabetes-duration" name="diabetes-duration" placeholder="Dura
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.accordion-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        if (!content) return;
+        content.classList.toggle('show');
+      });
+    });
+  });
+</script>
+</body>
+</html>
