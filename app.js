@@ -364,12 +364,15 @@ function displayVisitDetails(visit) {
       </ul>
     </section>
 
-    <section>
-      <h4>🩺 Medical History</h4>
-      <ul>
-        ${Object.entries(visit.medicalHistory).map(([key, value]) => `<li>${key}: ${value}</li>`).join('')}
-      </ul>
-    </section>
+<section>
+  <h4>🩺 Medical History</h4>
+  <ul>
+    ${Object.entries(visit.medicalHistory)
+      .map(([key, value]) => `<li>${key.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}: ${value === true ? 'Yes' : value === false ? 'No' : value}</li>`)
+
+      .join('')}
+  </ul>
+</section>
 
     <section>
       <h4>🩹 Symptoms</h4>
