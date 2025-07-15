@@ -170,6 +170,26 @@
     <input type="number" id="pth" name="pth">
   </form>
 </div>
+<!-- Urine Tests Accordion -->
+<button class="accordion-button">Urine Tests</button>
+<div class="accordion-content">
+  <form id="urine-tests-form">
+    <label for="urinalysis-protein">Urinalysis Protein:</label>
+    <input type="text" id="urinalysis-protein" name="urinalysis-protein">
+
+    <label for="urinalysis-blood">Urinalysis Blood:</label>
+    <input type="text" id="urinalysis-blood" name="urinalysis-blood">
+
+    <label for="spot-protein-creatinine">Spot Protein/Creatinine Ratio (mg/g):</label>
+    <input type="number" id="spot-protein-creatinine" name="spot-protein-creatinine">
+
+    <label for="acr">Albumin/Creatinine Ratio (mg/g):</label>
+    <input type="number" id="acr" name="acr">
+
+    <label for="urine-protein-24h">24-hour Protein (g/day):</label>
+    <input type="number" step="0.01" id="urine-protein-24h" name="urine-protein-24h">
+  </form>
+</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
