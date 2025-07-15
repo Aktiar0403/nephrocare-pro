@@ -873,20 +873,24 @@ document.getElementById('generate-diagnosis').addEventListener('click', () => {
   document.getElementById('notes').value = '';
   document.getElementById('patient-instructions').value = '';
 });
-
 function getMedicinesForDiagnosis(diagnosisText) {
-  const suggestions = [];
-  
-  medicines.forEach(med => {
-    med.indications.forEach(indication => {
-      if (diagnosisText.toLowerCase().includes(indication.toLowerCase())) {
-        suggestions.push(med);
-      }
-    });
-  });
+  const lowerDiag = diagnosisText.toLowerCase();
+  return medicines.filter(med =>
+    med.indications.some(indication =>
+      lowerDiag.includes(indication.toLowerCase()) ||
+      indication.toLowerCase().includes(lowerDiag)
+    )
+  );
+  if (medNames.trim() === '') {
+  document.getElementById('med-name').value = '⚠️ No suggested medicines found. Please add manually.';
+}
+
+}
+
+
   
   return suggestions;
-}
+
 
 setupReferenceHelpers();
 document.getElementById('print-prescription').addEventListener('click', () => {
