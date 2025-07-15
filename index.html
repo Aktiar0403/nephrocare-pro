@@ -369,6 +369,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
+  function renderTextFields(data) {
+  return Object.entries(data)
+    .map(([key, value]) => `- ${key}: ${value ? value : 'Not provided'}`)
+    .join('\n') + '\n';
+}
+
+  function generateExportText(visit) {
+  let text = `🆔 Visit ID: ${visit.id}\n\n`;
+
+  text += `🧾 Patient Profile\n`;
+  text += renderTextFields(visit.profile);
+
+  text += `\n🗂️ Medical History\n`;
+  text += renderTextFields(visit.medical);
+
+  text += `\n🩹 Symptoms\n`;
+  text += renderTextFields(visit.symptoms);
+
+  text += `\n💓 Vital Signs\n`;
+  text += renderTextFields(visit.vitals);
+
+  text += `\n🩸 Blood Tests\n`;
+  text += renderTextFields(visit.blood);
+
+  text += `\n💧 Urine Tests\n`;
+  text += renderTextFields(visit.urine);
+
+  text += `\n🖼️ Ultrasound Report\n`;
+  text += renderTextFields(visit.ultrasound);
+
+  text += `\n💊 Prescription\n`;
+  text += renderTextFields(visit.prescription);
+
+  text += `\n🧭 AI Diagnosis\n`;
+  text += `Doctor-level: ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}\n`;
+  text += `Patient-friendly: ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}\n`;
+
+  return text;
+}
 
   // ✅ Function 2: renderFields
   function renderFields(data) {
@@ -461,6 +500,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <p><strong>Doctor-level:</strong> ${visit.diagnosis.doctor ? visit.diagnosis.doctor : 'Not provided'}</p>
       <p><strong>Patient-friendly:</strong> ${visit.diagnosis.patient ? visit.diagnosis.patient : 'Not provided'}</p>
     `;
+    document.getElementById('export-button').style.display = 'block';
+document.getElementById('export-button').onclick = () => {
+  const exportText = generateExportText(visit);
+  document.getElementById('export-text').value = exportText;
+  document.getElementById('export-text').style.display = 'block';
+};
+
   }
 
 });
