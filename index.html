@@ -584,26 +584,22 @@ function renderRulesList() {
   function renderFields(data) {
   return Object.entries(data)
     .map(([key, value]) => {
-      if (!value) {
-        return `<li><strong>${key}:</strong> Not provided</li>`;
-      }
+      if (!value) value = 'Not provided';
 
-      // check referenceRanges
-      let color = '';
+      let style = '';
       if (referenceRanges[key]) {
+        const min = referenceRanges[key].min;
+        const max = referenceRanges[key].max;
         const num = parseFloat(value);
+
         if (!isNaN(num)) {
-          if (num < referenceRanges[key].min) {
-            color = 'color: orange;';
-          } else if (num > referenceRanges[key].max) {
-            color = 'color: red;';
-          } else {
-            color = 'color: green;';
-          }
+          if (num < min) style = 'color: orange;';   // below range
+          else if (num > max) style = 'color: red;'; // above range
+          else style = 'color: green;';              // normal
         }
       }
 
-      return `<li><strong>${key}:</strong> <span style="${color}">${value}</span></li>`;
+      return `<li><strong>${key}:</strong> <span style="${style}">${value}</span></li>`;
     })
     .join('');
 }
