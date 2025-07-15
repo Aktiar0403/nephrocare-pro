@@ -52,10 +52,28 @@
   <h1>NephroCare Pro</h1>
 
   <!-- Patient Profile Accordion -->
-  <button class="accordion-button">Patient Profile</button>
-  <div class="accordion-content">
-    <p>This is the patient profile form.</p>
-  </div>
+  <!-- Patient Profile Accordion -->
+<button class="accordion-button">Patient Profile</button>
+<div class="accordion-content">
+  <form id="patient-profile-form">
+    <label for="patient-name">Name:</label>
+    <input type="text" id="patient-name" name="patient-name" placeholder="Enter name" required>
+
+    <label for="patient-age">Age:</label>
+    <input type="number" id="patient-age" name="patient-age" placeholder="Enter age" required>
+
+    <label for="patient-gender">Gender:</label>
+    <select id="patient-gender" name="patient-gender" required>
+      <option value="">Select gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="patient-location">Location:</label>
+    <input type="text" id="patient-location" name="patient-location" placeholder="Enter location">
+  </form>
+</div>
 
   <!-- Medical History Accordion -->
   <button class="accordion-button">Medical History</button>
