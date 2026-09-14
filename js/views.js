@@ -71,7 +71,7 @@ export function pageFoot(step) {
 
 export function renderPatient(v) {
   const p = v.patient;
-  return `${pageHead(STEPS[0])}
+  return `${pageHead(STEPS[0], p.name ? "" : `<button class="btn" data-action="sample">Load sample patient</button>`)}
   <div class="card"><div class="card-head"><h2>Identity</h2><span class="hint">Required: name, age, sex</span></div><div class="card-body grid c3">
     ${field("Full name", input("patient.name", p.name, 'placeholder="e.g. Rahim Uddin" autocomplete="off"'))}
     ${field("Age", input("patient.age", p.age, 'type="number" min="0" max="120" inputmode="numeric" placeholder="years"'), "years")}

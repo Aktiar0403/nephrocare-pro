@@ -192,6 +192,7 @@ document.addEventListener("click", (e) => {
       store.newVisit(); openRecord = null; go("patient"); break;
     }
     case "print": printSheet(store.visit, ctx); break;
+    case "sample": store.loadSample(); openRecord = null; go("labs"); notify("Sample patient loaded. Nothing is saved until you press Save."); break;
     case "regen-explain": {
       store.set("assessment.patientExplanation", ctx.explanation);
       $('[data-bind="assessment.patientExplanation"]').value = ctx.explanation;
@@ -270,6 +271,9 @@ function recordText(r) {
   if (r.assessment.patientExplanation) lines.push("FOR THE PATIENT", r.assessment.patientExplanation);
   return lines.join("\n");
 }
+
+// ?demo=1 loads the sample patient (used for screenshots and quick demos).
+if (new URLSearchParams(location.search).get("demo") === "1" && !store.visit.patient.name) store.loadSample();
 
 window.addEventListener("hashchange", () => { const r = location.hash.replace("#", ""); if (r && r !== route) { route = r; renderAll(); } });
 renderAll();

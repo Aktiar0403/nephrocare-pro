@@ -21,6 +21,31 @@ export function blankVisit() {
   };
 }
 
+/** A realistic sample visit for demos and first-run exploration. */
+export function sampleVisit() {
+  const v = blankVisit();
+  v.patient = { name: "Rahim Uddin", age: "58", sex: "Male", phone: "", location: "Guwahati", mrn: "NC-1042" };
+  v.history = { ...v.history, diabetes: true, diabetesYears: "12", hypertension: true, hypertensionYears: "8", nsaid: true };
+  v.symptoms = { ...v.symptoms, edema: true, fatigue: true };
+  v.vitals = { sbp: "158", dbp: "94", weight: "78", height: "168", volumeStatus: "Hypervolaemic (fluid overload)" };
+  v.labs = { ...v.labs, creatinine: "2.1", urea: "68", potassium: "5.6", sodium: "138", calcium: "8.7", phosphate: "5.1", bicarbonate: "19", hemoglobin: "10.2", albumin: "3.4", pth: "142", hba1c: "8.4" };
+  v.urine = { dipProtein: "3+", dipBlood: "Trace", acr: "420", pcr: "", protein24: "" };
+  v.imaging = { ...v.imaging, kidneySize: "Normal", echogenicity: "Mildly increased", parenchyma: "Normal", hydronephrosis: "None", stones: "None", cysts: "None" };
+  v.assessment.doctorNotes = "Diabetic kidney disease, G3b A3, with hyperkalaemia and metabolic acidosis. Hold NSAIDs. Start SGLT2 inhibitor, continue ARB with potassium review in 1 week, oral bicarbonate, phosphate restriction. Iron studies before ESA.";
+  v.prescription = {
+    items: [
+      { name: "Dapagliflozin", composition: "Dapagliflozin 10mg", type: "SGLT2 Inhibitor", dose: "1 tab", frequency: "once daily", duration: "30 days", instructions: "morning" },
+      { name: "Telmisartan", composition: "Telmisartan 40mg", type: "ARB", dose: "1 tab", frequency: "once daily", duration: "30 days", instructions: "recheck potassium in 7 days" },
+      { name: "Sodium Bicarbonate", composition: "500mg", type: "Alkali Therapy", dose: "1 tab", frequency: "twice daily", duration: "30 days", instructions: "after food" },
+      { name: "Sevelamer Carbonate", composition: "800mg", type: "Phosphate Binder", dose: "1 tab", frequency: "three times daily", duration: "30 days", instructions: "with meals" },
+    ],
+    advice: "Low salt (<5 g/day), limit potassium-rich foods, avoid painkillers such as ibuprofen and diclofenac, 1.5 L fluid per day while swollen.",
+    followUp: "Creatinine, potassium and bicarbonate in 7 days. ACR and HbA1c in 3 months. Review in 4 weeks.",
+  };
+  v.visited = { history: true, vitals: true, labs: true, imaging: true, assessment: true };
+  return v;
+}
+
 export function defaultSettings() {
   return {
     clinic: { doctor: "", qualifications: "", clinic: "", address: "", phone: "", regNo: "" },
@@ -73,6 +98,11 @@ export const store = {
 
   newVisit() {
     this.visit = blankVisit();
+    this.persistVisit();
+  },
+
+  loadSample() {
+    this.visit = sampleVisit();
     this.persistVisit();
   },
 
