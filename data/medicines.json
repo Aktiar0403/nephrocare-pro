@@ -1,0 +1,1079 @@
+[
+ {
+  "name": "Alfacalcidol",
+  "type": "Vitamin D Analog",
+  "composition": "0.25mcg",
+  "indications": [
+   "CKD",
+   "Secondary Hyperparathyroidism"
+  ]
+ },
+ {
+  "name": "Aliskiren",
+  "type": "Direct Renin Inhibitor",
+  "composition": "Aliskiren 150mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Alpha Ketoanalogue",
+  "type": "Renal Supplement",
+  "composition": "Tablets",
+  "indications": [
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Amiloride",
+  "type": "Potassium-sparing Diuretic",
+  "composition": "Amiloride 5mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Amlodipine",
+  "type": "Calcium Channel Blocker",
+  "composition": "Amlodipine 5mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Amlodipine+Valsartan",
+  "type": "Combination",
+  "composition": "Amlodipine 5mg + Valsartan 80mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Apixaban",
+  "type": "Anticoagulant",
+  "composition": "Apixaban 5mg",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Aspirin",
+  "type": "Antiplatelet",
+  "composition": "Aspirin 75mg",
+  "indications": [
+   "Heart Disease",
+   "Secondary Prevention",
+   "Stroke Prevention"
+  ]
+ },
+ {
+  "name": "Atenolol",
+  "type": "Beta Blocker",
+  "composition": "Atenolol 50mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Atorvastatin",
+  "type": "Statin",
+  "composition": "Atorvastatin 10mg",
+  "indications": [
+   "Dyslipidemia",
+   "Heart Disease",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Bisoprolol",
+  "type": "Beta Blocker",
+  "composition": "Bisoprolol 5mg",
+  "indications": [
+   "Hypertension",
+   "Heart Failure"
+  ]
+ },
+ {
+  "name": "Calcitriol",
+  "type": "Active Vitamin D",
+  "composition": "0.25mcg",
+  "indications": [
+   "CKD",
+   "Secondary Hyperparathyroidism"
+  ]
+ },
+ {
+  "name": "Calcium Acetate",
+  "type": "Phosphate Binder",
+  "composition": "667mg",
+  "indications": [
+   "CKD",
+   "Hyperphosphatemia"
+  ]
+ },
+ {
+  "name": "Canagliflozin",
+  "type": "SGLT2 Inhibitor",
+  "composition": "Canagliflozin 100mg",
+  "indications": [
+   "Diabetes",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Candesartan",
+  "type": "ARB",
+  "composition": "Candesartan 8mg",
+  "indications": [
+   "Hypertension",
+   "Heart Failure"
+  ]
+ },
+ {
+  "name": "Canrenone",
+  "type": "Aldosterone Antagonist",
+  "composition": "Canrenone 100mg",
+  "indications": [
+   "Heart Failure",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Carvedilol",
+  "type": "Beta Blocker",
+  "composition": "Carvedilol 6.25mg",
+  "indications": [
+   "Heart Failure",
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Chlorpropamide",
+  "type": "Sulfonylurea",
+  "composition": "Chlorpropamide 250mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Chlorthalidone",
+  "type": "Diuretic",
+  "composition": "Chlorthalidone 12.5mg",
+  "indications": [
+   "Hypertension",
+   "Edema"
+  ]
+ },
+ {
+  "name": "Cholecalciferol",
+  "type": "Vitamin D3",
+  "composition": "60000 IU",
+  "indications": [
+   "CKD",
+   "Deficiency"
+  ]
+ },
+ {
+  "name": "Cinacalcet",
+  "type": "Calcimimetic",
+  "composition": "30mg",
+  "indications": [
+   "CKD",
+   "Secondary Hyperparathyroidism"
+  ]
+ },
+ {
+  "name": "Clopidogrel",
+  "type": "Antiplatelet",
+  "composition": "Clopidogrel 75mg",
+  "indications": [
+   "Heart Disease",
+   "Stroke Prevention"
+  ]
+ },
+ {
+  "name": "Colchicine",
+  "type": "Anti-inflammatory",
+  "composition": "Colchicine 0.5mg",
+  "indications": [
+   "Pericarditis",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Dabigatran",
+  "type": "Anticoagulant",
+  "composition": "Dabigatran 110mg",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Dapagliflozin",
+  "type": "SGLT2 Inhibitor",
+  "composition": "Dapagliflozin 10mg",
+  "indications": [
+   "Diabetes",
+   "CKD",
+   "Heart Failure",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Dapagliflozin+Metformin",
+  "type": "Combination",
+  "composition": "10mg+500mg",
+  "indications": [
+   "Diabetes",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Darbepoetin Alfa",
+  "type": "ESA",
+  "composition": "25mcg/mL",
+  "indications": [
+   "CKD Anemia"
+  ]
+ },
+ {
+  "name": "Degludec",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Detemir",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Digoxin",
+  "type": "Cardiac Glycoside",
+  "composition": "Digoxin 0.25mg",
+  "indications": [
+   "Heart Failure",
+   "AF"
+  ]
+ },
+ {
+  "name": "Diltiazem",
+  "type": "Calcium Channel Blocker",
+  "composition": "Diltiazem 60mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Doxazosin",
+  "type": "Alpha Blocker",
+  "composition": "Doxazosin 2mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Edoxaban",
+  "type": "Anticoagulant",
+  "composition": "Edoxaban 30mg",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Empagliflozin",
+  "type": "SGLT2 Inhibitor",
+  "composition": "Empagliflozin 10mg",
+  "indications": [
+   "Diabetes",
+   "CKD",
+   "Heart Failure",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Empagliflozin+Metformin",
+  "type": "Combination",
+  "composition": "10mg+500mg",
+  "indications": [
+   "Diabetes",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Enalapril",
+  "type": "ACE Inhibitor",
+  "composition": "Enalapril 5mg",
+  "indications": [
+   "Hypertension",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Enoxaparin",
+  "type": "Low Molecular Weight Heparin",
+  "composition": "40mg/0.4mL",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Eplerenone",
+  "type": "Aldosterone Antagonist",
+  "composition": "Eplerenone 25mg",
+  "indications": [
+   "Heart Failure",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Erythropoietin",
+  "type": "ESA",
+  "composition": "4000 IU/mL",
+  "indications": [
+   "CKD Anemia"
+  ]
+ },
+ {
+  "name": "Ethacrynic Acid",
+  "type": "Loop Diuretic",
+  "composition": "Ethacrynic Acid 50mg",
+  "indications": [
+   "Edema",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Ezetimibe",
+  "type": "Cholesterol Absorption Inhibitor",
+  "composition": "Ezetimibe 10mg",
+  "indications": [
+   "Dyslipidemia"
+  ]
+ },
+ {
+  "name": "Fenofibrate",
+  "type": "Fibrate",
+  "composition": "Fenofibrate 145mg",
+  "indications": [
+   "Dyslipidemia",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Ferric Carboxymaltose",
+  "type": "IV Iron",
+  "composition": "50mg/mL",
+  "indications": [
+   "CKD Anemia"
+  ]
+ },
+ {
+  "name": "Folic Acid",
+  "type": "Vitamin",
+  "composition": "5mg",
+  "indications": [
+   "Anemia",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Furosemide",
+  "type": "Loop Diuretic",
+  "composition": "Furosemide 40mg",
+  "indications": [
+   "Edema",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Gemfibrozil",
+  "type": "Fibrate",
+  "composition": "Gemfibrozil 600mg",
+  "indications": [
+   "Dyslipidemia"
+  ]
+ },
+ {
+  "name": "Glargine",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Glargine+Lixisenatide",
+  "type": "Combination",
+  "composition": "100u+33mcg/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Glibenclamide",
+  "type": "Sulfonylurea",
+  "composition": "Glibenclamide 5mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Glibenclamide+Metformin",
+  "type": "Combination",
+  "composition": "5mg+500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Gliclazide",
+  "type": "Sulfonylurea",
+  "composition": "Gliclazide 80mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Gliclazide MR",
+  "type": "Sulfonylurea",
+  "composition": "Gliclazide MR 60mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Glimepiride",
+  "type": "Sulfonylurea",
+  "composition": "Glimepiride 2mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Glimepiride+Metformin",
+  "type": "Combination",
+  "composition": "2mg+500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Heparin",
+  "type": "Anticoagulant",
+  "composition": "5000 units/mL",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Human Insulin",
+  "type": "Insulin",
+  "composition": "30/70 Mixtard",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Hydralazine",
+  "type": "Vasodilator",
+  "composition": "Hydralazine 25mg",
+  "indications": [
+   "Hypertension",
+   "Heart Failure"
+  ]
+ },
+ {
+  "name": "Hydrochlorothiazide",
+  "type": "Diuretic",
+  "composition": "HCTZ 12.5mg",
+  "indications": [
+   "Hypertension",
+   "Edema"
+  ]
+ },
+ {
+  "name": "Indapamide",
+  "type": "Thiazide-like Diuretic",
+  "composition": "Indapamide 1.5mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Insulin Aspart",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Insulin Detemir",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Insulin Glargine",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Insulin Lispro",
+  "type": "Insulin",
+  "composition": "100 units/mL",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Iron Sucrose",
+  "type": "IV Iron",
+  "composition": "100mg/5mL",
+  "indications": [
+   "CKD Anemia"
+  ]
+ },
+ {
+  "name": "Isosorbide Dinitrate",
+  "type": "Nitrate",
+  "composition": "Isosorbide Dinitrate 10mg",
+  "indications": [
+   "Heart Failure",
+   "Angina"
+  ]
+ },
+ {
+  "name": "Isosorbide Mononitrate",
+  "type": "Nitrate",
+  "composition": "Isosorbide 30mg",
+  "indications": [
+   "Angina",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Ivabradine",
+  "type": "Funny Channel Blocker",
+  "composition": "Ivabradine 5mg",
+  "indications": [
+   "Heart Failure"
+  ]
+ },
+ {
+  "name": "Labetalol",
+  "type": "Beta Blocker",
+  "composition": "Labetalol 100mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Lanthanum Carbonate",
+  "type": "Phosphate Binder",
+  "composition": "500mg",
+  "indications": [
+   "CKD",
+   "Hyperphosphatemia"
+  ]
+ },
+ {
+  "name": "Linagliptin",
+  "type": "DPP-4 Inhibitor",
+  "composition": "Linagliptin 5mg",
+  "indications": [
+   "Diabetes",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Linagliptin+Metformin",
+  "type": "Combination",
+  "composition": "5mg+500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Lisinopril",
+  "type": "ACE Inhibitor",
+  "composition": "Lisinopril 10mg",
+  "indications": [
+   "Hypertension",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Losartan",
+  "type": "ARB",
+  "composition": "Losartan 50mg",
+  "indications": [
+   "Hypertension",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Losartan+HCTZ",
+  "type": "Combination",
+  "composition": "Losartan 50mg + HCTZ 12.5mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Losartan+Hydrochlorothiazide",
+  "type": "Combination",
+  "composition": "50mg+12.5mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Magnesium Oxide",
+  "type": "Electrolyte",
+  "composition": "400mg",
+  "indications": [
+   "Hypomagnesemia"
+  ]
+ },
+ {
+  "name": "Mecobalamin",
+  "type": "Vitamin B12",
+  "composition": "500mcg",
+  "indications": [
+   "CKD",
+   "Neuropathy"
+  ]
+ },
+ {
+  "name": "Metformin",
+  "type": "Biguanide",
+  "composition": "Metformin 500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Metformin SR",
+  "type": "Biguanide",
+  "composition": "500mg",
+  "indications": [
+   "Diabetes",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Metolazone",
+  "type": "Thiazide-like Diuretic",
+  "composition": "Metolazone 2.5mg",
+  "indications": [
+   "Hypertension",
+   "Edema"
+  ]
+ },
+ {
+  "name": "Metoprolol",
+  "type": "Beta Blocker",
+  "composition": "Metoprolol 25mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Minoxidil",
+  "type": "Vasodilator",
+  "composition": "Minoxidil 5mg",
+  "indications": [
+   "Resistant Hypertension"
+  ]
+ },
+ {
+  "name": "Nateglinide",
+  "type": "Meglitinide",
+  "composition": "Nateglinide 120mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Nebivolol",
+  "type": "Beta Blocker",
+  "composition": "Nebivolol 5mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Nifedipine",
+  "type": "Calcium Channel Blocker",
+  "composition": "Nifedipine 30mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Nitroglycerin",
+  "type": "Nitrate",
+  "composition": "Nitroglycerin 0.5mg",
+  "indications": [
+   "Angina",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Nitroprusside",
+  "type": "Vasodilator",
+  "composition": "IV Infusion",
+  "indications": [
+   "Hypertensive Emergency"
+  ]
+ },
+ {
+  "name": "Olmesartan",
+  "type": "ARB",
+  "composition": "Olmesartan 20mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Paricalcitol",
+  "type": "Vitamin D Analog",
+  "composition": "1mcg",
+  "indications": [
+   "CKD",
+   "Secondary Hyperparathyroidism"
+  ]
+ },
+ {
+  "name": "Perindopril",
+  "type": "ACE Inhibitor",
+  "composition": "Perindopril 4mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Pioglitazone",
+  "type": "Thiazolidinedione",
+  "composition": "Pioglitazone 15mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Pioglitazone+Metformin",
+  "type": "Combination",
+  "composition": "15mg+500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Potassium Chloride",
+  "type": "Electrolyte",
+  "composition": "600mg",
+  "indications": [
+   "Hypokalemia",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Prasugrel",
+  "type": "Antiplatelet",
+  "composition": "Prasugrel 10mg",
+  "indications": [
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Pravastatin",
+  "type": "Statin",
+  "composition": "20mg",
+  "indications": [
+   "Dyslipidemia"
+  ]
+ },
+ {
+  "name": "Prazosin",
+  "type": "Alpha Blocker",
+  "composition": "Prazosin 2.5mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Propranolol",
+  "type": "Beta Blocker",
+  "composition": "Propranolol 40mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Pyridoxine",
+  "type": "Vitamin B6",
+  "composition": "100mg",
+  "indications": [
+   "CKD",
+   "Neuropathy"
+  ]
+ },
+ {
+  "name": "Ramipril",
+  "type": "ACE Inhibitor",
+  "composition": "Ramipril 5mg",
+  "indications": [
+   "Hypertension",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Ramipril+HCTZ",
+  "type": "Combination",
+  "composition": "Ramipril 5mg + HCTZ 12.5mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Ramipril+Hydrochlorothiazide",
+  "type": "Combination",
+  "composition": "5mg+12.5mg",
+  "indications": [
+   "Hypertension",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Repaglinide",
+  "type": "Meglitinide",
+  "composition": "Repaglinide 1mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Rivaroxaban",
+  "type": "Anticoagulant",
+  "composition": "Rivaroxaban 10mg",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ },
+ {
+  "name": "Rosuvastatin",
+  "type": "Statin",
+  "composition": "Rosuvastatin 10mg",
+  "indications": [
+   "Dyslipidemia",
+   "Heart Disease",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Sacubitril+Valsartan",
+  "type": "ARNI",
+  "composition": "Sacubitril 24mg + Valsartan 26mg",
+  "indications": [
+   "Heart Failure"
+  ]
+ },
+ {
+  "name": "Saxagliptin",
+  "type": "DPP-4 Inhibitor",
+  "composition": "5mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Sevelamer Carbonate",
+  "type": "Phosphate Binder",
+  "composition": "800mg",
+  "indications": [
+   "CKD",
+   "Hyperphosphatemia"
+  ]
+ },
+ {
+  "name": "Simvastatin",
+  "type": "Statin",
+  "composition": "20mg",
+  "indications": [
+   "Dyslipidemia"
+  ]
+ },
+ {
+  "name": "Sitagliptin",
+  "type": "DPP-4 Inhibitor",
+  "composition": "Sitagliptin 100mg",
+  "indications": [
+   "Diabetes",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Sodium Bicarbonate",
+  "type": "Alkali Therapy",
+  "composition": "500mg",
+  "indications": [
+   "CKD",
+   "Metabolic Acidosis"
+  ]
+ },
+ {
+  "name": "Spironolactone",
+  "type": "Aldosterone Antagonist",
+  "composition": "Spironolactone 25mg",
+  "indications": [
+   "Heart Failure",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Telmisartan",
+  "type": "ARB",
+  "composition": "Telmisartan 40mg",
+  "indications": [
+   "Hypertension",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Telmisartan+Hydrochlorothiazide",
+  "type": "Combination",
+  "composition": "40mg+12.5mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Teneligliptin",
+  "type": "DPP-4 Inhibitor",
+  "composition": "Teneligliptin 20mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Ticagrelor",
+  "type": "Antiplatelet",
+  "composition": "Ticagrelor 90mg",
+  "indications": [
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Tolbutamide",
+  "type": "Sulfonylurea",
+  "composition": "Tolbutamide 500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Torsemide",
+  "type": "Loop Diuretic",
+  "composition": "Torsemide 10mg",
+  "indications": [
+   "Edema",
+   "CKD"
+  ]
+ },
+ {
+  "name": "Trandolapril",
+  "type": "ACE Inhibitor",
+  "composition": "Trandolapril 2mg",
+  "indications": [
+   "Hypertension"
+  ]
+ },
+ {
+  "name": "Valsartan",
+  "type": "ARB",
+  "composition": "Valsartan 80mg",
+  "indications": [
+   "Hypertension",
+   "CKD",
+   "Proteinuria"
+  ]
+ },
+ {
+  "name": "Verapamil",
+  "type": "Calcium Channel Blocker",
+  "composition": "Verapamil 40mg",
+  "indications": [
+   "Hypertension",
+   "Heart Disease"
+  ]
+ },
+ {
+  "name": "Vildagliptin",
+  "type": "DPP-4 Inhibitor",
+  "composition": "Vildagliptin 50mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Vildagliptin+Metformin",
+  "type": "Combination",
+  "composition": "50mg+500mg",
+  "indications": [
+   "Diabetes"
+  ]
+ },
+ {
+  "name": "Vitamin D3",
+  "type": "Supplement",
+  "composition": "60000 IU",
+  "indications": [
+   "CKD",
+   "Deficiency"
+  ]
+ },
+ {
+  "name": "Warfarin",
+  "type": "Anticoagulant",
+  "composition": "Warfarin 5mg",
+  "indications": [
+   "Heart Disease",
+   "AF"
+  ]
+ }
+]
